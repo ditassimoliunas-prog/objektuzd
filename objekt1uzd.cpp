@@ -53,9 +53,9 @@ void menu() {
     bool testi = true;
 
     while (testi) {
-        cout << "----------------------------------------------" << endl;
-        cout << " Studentu Rezultatu skaiciavimo aplikacija " << endl;
-        cout << "----------------------------------------------" << endl;
+        cout << "---------------------------------------------------" << endl;
+        cout << "Studentu Rezultatu skaiciavimo aplikacija " << endl;
+        cout << "---------------------------------------------------" << endl;
         cout << "1. Ivesti duomenis ranka " << endl;
         cout << "2. Generuoti tik pazymius " << endl;
         cout << "3. Generuoti studentu vardus, pavardes ir pazymius " << endl;
@@ -93,11 +93,11 @@ void inputas(vector<Studentas>& grupe) {
 
         cout << "Iveskite varda ir pavarde: ";
         cin >> A.vardas >> A.pavarde;
-        cout << "----------------------------------------------" << endl;
+        cout << "---------------------------------------------------" << endl;
         cout << "Iveskite semestro ivertinimus. Kiek ju bus? " << endl;
         int n, sum = 0;
         cin >> n;
-        cout << "----------------------------------------------" << endl;
+        cout << "---------------------------------------------------" << endl;
         for (int i = 0; i < n; i++) {
             int temp;
             cout << "Iveskite " << i + 1 << " pazymi is " << n << ": ";
@@ -107,7 +107,7 @@ void inputas(vector<Studentas>& grupe) {
         }
         cout << "Iveskite egzamina: ";
         cin >> A.egz;
-        cout << "----------------------------------------------" << endl;
+        cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
         A.rez = sum * 1.0 / (n * 1.0) * 0.4 + A.egz * 0.6;
