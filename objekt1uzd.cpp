@@ -90,16 +90,19 @@ void menu() {
             cout << "1. Ivesti duomenis ranka " << endl;
             inputas(grupe);
             outputas(grupe);
+            grupe.clear();
             break;
         case 2:
             cout << "2. Generuoti tik pazymius " << endl;
 			generuotiPaz(grupe);
 			outputas(grupe);
+            grupe.clear();
             break;
         case 3:
             cout << "3. Generuoti studentu vardus, pavardes ir pazymius " << endl;
             generuotiVardIrPav(grupe);
             outputas(grupe);
+            grupe.clear();
             break;
         case 4:
             cout << "Programa uzdaroma " << endl;
