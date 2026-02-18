@@ -15,6 +15,7 @@ using std::string;
 using std::vector;
 using std::numeric_limits;
 using std::streamsize;
+using std::ifstream;
 using std::left;
 using std::right;
 using std::setw;
@@ -23,17 +24,16 @@ using std::setprecision;
 using std::sort;
 using std::fixed;
 
-
 struct Studentas {
     string vardas = "A", pavarde = "BB";
-    //int  *paz jei dinaminis masyvas
+    // int paz jei dinaminis masyvas
     vector <int> paz;
     int egz;
     double rez;
     double med;
 };
 
-//Funkcija patikrinti ar vardas/pavarde turi tik raides
+// Funkcija patikrinti ar vardas/pavarde turi tik raides
 bool arTikRaides(const string& str) {
     if (str.empty()) return false;
     for (char c : str) {
@@ -44,7 +44,7 @@ bool arTikRaides(const string& str) {
     return true;
 }
 
-//Medianos funkcija
+// Medianos funkcija
 double mediana(vector <int> paz) {
     if (paz.empty()) return 0.0;
 
@@ -62,6 +62,7 @@ double mediana(vector <int> paz) {
 void inputas(vector<Studentas>& grupe);
 void outputas(const vector<Studentas>& grupe);
 void generuotiPaz(vector<Studentas>& grupe);
+void generuotiVardIrPav(vector<Studentas>& grupe);
 void menu();
 int main() {
     menu();
@@ -70,7 +71,7 @@ int main() {
 
 void menu() {
     vector<Studentas>grupe;
-    int pas; //pasirinkimas
+    int pas; // pasirinkimas
     bool testi = true;
 
     while (testi) {
@@ -83,7 +84,7 @@ void menu() {
         cout << "4. Baigti darba " << endl;
         cin >> pas;
 
-        //pasirinkimo isvestys
+        // Pasirinkimo isvestys
         switch (pas) {
         case 1:
             cout << "1. Ivesti duomenis ranka " << endl;
@@ -97,14 +98,15 @@ void menu() {
             break;
         case 3:
             cout << "3. Generuoti studentu vardus, pavardes ir pazymius " << endl;
-            cout << "Funkcija dar nesukurta " << endl;
+            generuotiVardIrPav(grupe);
+            outputas(grupe);
             break;
         case 4:
             cout << "Programa uzdaroma " << endl;
             testi = false;
             break;
 
-        //Isvestus ivedus netinkama pasirinkima
+        // Isvestus ivedus netinkama pasirinkima
         default:
             cout << "Klaida! Pasirinkite skaiciu nuo 1 iki 4 " << endl;
             cin.clear();
@@ -137,7 +139,7 @@ void inputas(vector<Studentas>& grupe) {
         while (!(cin >> n) || n < 0) {
             cout << "Klaida! Iveskite teigiama skaiciu: ";
             cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
         cout << "---------------------------------------------------" << endl;
         for (int i = 0; i < n; i++) {
@@ -148,7 +150,7 @@ void inputas(vector<Studentas>& grupe) {
                 if (!(cin >> temp)) {
                     cout << "Klaida! Iveskite skaiciu!" << endl;
                     cin.clear();
-                    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 }
                 else if (temp < 0 || temp > 10) {
                     cout << "Klaida! Pazymys turi buti nuo 0 iki 10!" << endl;
@@ -167,7 +169,7 @@ void inputas(vector<Studentas>& grupe) {
             if (!(cin >> A.egz)) {
                 cout << "Klaida! Iveskite skaiciu!" << endl;
                 cin.clear();
-                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
             else if (A.egz < 0 || A.egz > 10) {
                 cout << "Klaida! Egzaminas turi buti nuo 0 iki 10!" << endl;
@@ -191,7 +193,7 @@ void inputas(vector<Studentas>& grupe) {
 }
 
 // Atsitiktiniiu skaiciu generavimas
-void generuotiPaz(vector <Studentas>& grupe) {
+void generuotiPaz(vector<Studentas>& grupe) {
     srand(time(0)); //Inicializuoja atsitiktine seed pagal laika
 
     for (int ii = 0; ii < 2; ii++ ) {
@@ -223,20 +225,20 @@ void generuotiPaz(vector <Studentas>& grupe) {
         cout << "---------------------------------------------------" << endl;
 
         // Automatiskai generuojami pazymiai
-        // cout << "Pazymiu ivertinmai: ";
+        cout << "Pazymiu ivertinmai: ";
         for (int i = 0; i < n; i++) {
             int temp = rand() % 11; //Sugeneruoja skaiciu nuo 0 iki 10
             A.paz.push_back(temp);
             sum += temp;
-            // cout << temp << " ";
+            cout << temp << " ";
         }
 
-        // cout << endl;
+        cout << endl;
 
         // Automatiskai generuojamas egzaminas
         A.egz = rand() % 11;
-        // cout << "Egzamino ivertinimas: " << A.egz << endl;
-        // cout << "---------------------------------------------------" << endl;
+        cout << "Egzamino ivertinimas: " << A.egz << endl;
+        cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
         A.rez = sum * 1.0 / (n * 1.0) * 0.4 + A.egz * 0.6;
@@ -249,9 +251,118 @@ void generuotiPaz(vector <Studentas>& grupe) {
     }  
 }
 
+void generuotiVardIrPav(vector<Studentas>& grupe) {
+    srand(time(0));
+
+    // Nuskaitome failus
+    vector<string> vyruVard, vyruPav, motVard, motPav;
+    ifstream vvard("vpv/vvard.txt");
+    ifstream vpav("vpv/vpav.txt");
+    ifstream mvard("vpv/mvard.txt");
+    ifstream mpav("vpv/mpav.txt");
+
+    // Patikrinimas ar failai atsidare
+    if (!vvard.is_open() || !vpav.is_open() || !mvard.is_open() || !mpav.is_open()) {
+        cout << "Klaida! Nepavyko atidaryti vieno ar daugiau failu su vardais ir pavardemis " << endl;
+        return;
+    }
+
+    // Nuskaitomi visi vardai ir pavardes
+    string eilute;
+    while (vvard >> eilute) vyruVard.push_back(eilute);
+    while (vpav >> eilute) vyruPav.push_back(eilute);
+    while (mvard >> eilute) motVard.push_back(eilute);
+    while (mpav >> eilute) motPav.push_back(eilute);
+
+    vvard.close();
+    vpav.close();
+    mvard.close();
+    mpav.close();
+
+    // Patikrinama ar failai ne tusti
+    if (vyruVard.empty() || vyruPav.empty() || motVard.empty() || motPav.empty()) {
+        cout << "Klaida! Vienas ar daugiau failu yra tusti! " << endl;
+        return;
+    }
+
+    for (int ii = 0; ii < 2; ii++) {
+        Studentas A;
+
+        // Lyties pasirinkimas
+        char lytis;
+        bool lytisTinka = false;
+        while (!lytisTinka) {
+            cout << "Pasirinkite lyti (V - vyras, M - moteris): ";
+            cin >> lytis;
+
+            if (lytis == 'V' || lytis == 'v' || lytis == 'M' || lytis == 'm') {
+                lytisTinka = true;
+            }
+            else {
+                cout << "Klaida! Iveskite V arba M! " << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+        }
+
+        // Generuojamas vardas ir pavarde pagal lyti
+        if (lytis == 'V' || lytis == 'v') {
+            int vardIndex = rand() % vyruVard.size();
+            int pavIndex = rand() % vyruPav.size();
+            A.vardas = vyruVard[vardIndex];
+            A.pavarde = vyruPav[pavIndex];
+        }
+        else {
+            int vardIndex = rand() % motVard.size();
+            int pavIndex = rand() % motPav.size();
+            A.vardas = motVard[vardIndex];
+            A.pavarde = motPav[pavIndex];
+        }
+
+        cout << "Sugenruotas vardas ir pavarde: " << A.vardas << " " << A.pavarde << endl;
+        cout << "---------------------------------------------------" << endl;
+
+        // Klausimas kiek pazymiu sugeneruoti
+        cout << "Iveskite semsetro pazymiu ivertinimu kieki: " << endl;
+        int n, sum = 0;
+        while (!(cin >> n) || n < 0) {
+            cout << "Klaida! Iveskite teigiama skaiciu: ";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+
+        cout << "---------------------------------------------------" << endl;
+
+        // Automatiskai sugeneruojami pazymiai
+        cout << "Pazymiu ivertinimai: ";
+        for (int i = 0; i < n; i++) {
+            int temp = rand() % 11;
+            A.paz.push_back(temp);
+            sum += temp;
+            cout << temp << " ";
+        }
+        cout << endl;
+
+        // Automatiskai sugeneruojamas egzaminas
+        A.egz = rand() % 11;
+        cout << "Egzamino ivertinimas: " << A.egz << endl;
+        cout << "---------------------------------------------------" << endl;
+
+        // Vidurkio skaiciavimas
+        A.rez = sum * 1.0 / (n * 1.0) * 0.4 + A.egz * 0.6;
+
+        // Medianos skaiciavimas
+        A.med = mediana(A.paz) * 0.4 + A.egz * 0.6;
+
+        grupe.push_back(A);
+        A.paz.clear();
+    }
+
+}
 
 
-void outputas(const vector <Studentas> &grupe) {
+
+void outputas(const vector<Studentas>& grupe) {
     for (auto A : grupe) {
         cout << left << setw(10) << "Vardas " << left << setw(20) << "Pavarde " << left << setw(30) << "Galutinis (Vid.) " << left << setw(40) << "Galutinis (Med.) " << endl;
         cout << left << setw(10) << A.vardas << left << setw(20) << A.pavarde;
