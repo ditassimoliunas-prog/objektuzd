@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <cctype>
+#include <limits>
 
 using std::cin;
 using std::cout;
@@ -23,6 +25,17 @@ struct Studentas {
     double rez;
     double med;
 };
+
+//Funkcija patikrinti ar vardas/pavarde turi tik raides
+bool arTikRaides(const string& str) {
+    if (str.empty()) return false;
+    for (char c : str) {
+        if (!std::isalpha(c)) {
+            return false;
+        }
+    }
+    return true;
+}
 
 //Medianos funkcija
 double mediana(vector <int> paz) {
@@ -62,10 +75,12 @@ void menu() {
         cout << "4. Baigti darba " << endl;
         cin >> pas;
 
+        //pasirinkimo isvestys
         switch (pas) {
         case 1:
             cout << "1. Ivesti duomenis ranka " << endl;
             inputas(grupe);
+            outputas(grupe);
             break;
         case 2:
             cout << "2. Generuoti tik pazymius " << endl;
@@ -79,6 +94,8 @@ void menu() {
             cout << "Programa uzdaroma " << endl;
             testi = false;
             break;
+
+        //Isvestus ivedus netinkama pasirinkima
         default:
             cout << "Klaida! Pasirinkite skaiciu nuo 1 iki 4 " << endl;
             cin.clear();
@@ -91,22 +108,60 @@ void inputas(vector<Studentas>& grupe) {
     for (int ii = 0; ii < 2; ii++) {
         Studentas A;
 
-        cout << "Iveskite varda ir pavarde: ";
-        cin >> A.vardas >> A.pavarde;
+        bool vardasGeras = false;
+        while (!vardasGeras) {
+            cout << "Iveskite varda ir pavarde: ";
+            cin >> A.vardas >> A.pavarde;
+
+            if (!arTikRaides(A.vardas) || !arTikRaides(A.pavarde)) {
+                cout << "Klaida! Vardas ir pavarde turi buti sudaryti tik is raidziu!" << endl;
+                cin.clear();
+            } else {
+                vardasGeras = true;
+            }
+        }
+
         cout << "---------------------------------------------------" << endl;
         cout << "Iveskite semestro ivertinimus. Kiek ju bus? " << endl;
         int n, sum = 0;
-        cin >> n;
+        while (!(cin >> n) || n < 0) {
+            cout << "Klaida! Iveskite teigiama skaiciu: ";
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
         cout << "---------------------------------------------------" << endl;
         for (int i = 0; i < n; i++) {
             int temp;
-            cout << "Iveskite " << i + 1 << " pazymi is " << n << ": ";
-            cin >> temp;
+            bool pazymisTeisingas = false;
+            while (!pazymisTeisingas) {
+                cout << "Iveskite " << i + 1 << " pazymi is " << n << " (0-10): ";
+                if (!(cin >> temp)) {
+                    cout << "Klaida! Iveskite skaiciu!" << endl;
+                    cin.clear();
+                    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                } else if (temp < 0 || temp > 10) {
+                    cout << "Klaida! Pazymys turi buti nuo 0 iki 10!" << endl;
+                } else {
+                    pazymisTeisingas = true;
+                }
+            }
             A.paz.push_back(temp);
             sum += temp;
         }
-        cout << "Iveskite egzamina: ";
-        cin >> A.egz;
+
+        bool egzaminasTeisingas = false;
+        while (!egzaminasTeisingas) {
+            cout << "Iveskite egzamina (0-10): ";
+            if (!(cin >> A.egz)) {
+                cout << "Klaida! Iveskite skaiciu!" << endl;
+                cin.clear();
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            } else if (A.egz < 0 || A.egz > 10) {
+                cout << "Klaida! Egzaminas turi buti nuo 0 iki 10!" << endl;
+            } else {
+                egzaminasTeisingas = true;
+            }
+        }
         cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
