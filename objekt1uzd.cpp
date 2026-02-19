@@ -235,7 +235,7 @@ void generuotiPaz(vector<Studentas>& grupe) {
         }
 
         cout << "---------------------------------------------------" << endl;
-        cout << "Iveskite semestro pazymiu ivertinmu kieki: " << endl;
+        cout << "Iveskite semestro pazymiu kieki: " << endl;
         int n, sum = 0;
         while (!(cin >> n) || n < 0) {
             cout << "Klaida! Iveskite teigiama skaiciu: ";
@@ -353,7 +353,7 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
         cout << "---------------------------------------------------" << endl;
 
         // Klausimas kiek pazymiu sugeneruoti
-        cout << "Iveskite semsetro pazymiu ivertinimu kieki: " << endl;
+        cout << "Iveskite semestro pazymiu kieki: " << endl;
         int n, sum = 0;
         while (!(cin >> n) || n < 0) {
             cout << "Klaida! Iveskite teigiama skaiciu: ";

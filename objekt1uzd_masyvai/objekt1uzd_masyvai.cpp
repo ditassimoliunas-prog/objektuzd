@@ -219,7 +219,16 @@ void inputas(Studentas grupe[], int& grupesDydis) {
 void generuotiPaz(Studentas grupe[], int& grupesDydis) {
     srand(time(0));
 
-    for (int ii = 0; ii < 2; ii++) {
+    int studentuKiekis;
+    cout << "Kiek studentu norite sugeneruoti? ";
+    while (!(cin >> studentuKiekis) || studentuKiekis < 1) {
+        cout << "Klaida! Iveskite teigiama skaiciu: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    cout << "---------------------------------------------------" << endl;
+
+    for (int ii = 0; ii < studentuKiekis; ii++) {
         if (grupesDydis >= MAX_STUDENTU) {
             cout << "Pasiektas maksimalus studentu skaicius!" << endl;
             return;
@@ -325,7 +334,16 @@ void generuotiVardIrPav(Studentas grupe[], int& grupesDydis) {
         return;
     }
 
-    for (int ii = 0; ii < 2; ii++) {
+    int studentuKiekis;
+    cout << "Kiek studentu norite sugeneruoti? ";
+    while (!(cin >> studentuKiekis) || studentuKiekis < 1) {
+        cout << "Klaida! Iveskite teigiama skaiciu: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    cout << "---------------------------------------------------" << endl;
+
+    for (int ii = 0; ii < studentuKiekis; ii++) {
         if (grupesDydis >= MAX_STUDENTU) {
             cout << "Pasiektas maksimalus studentu skaicius!" << endl;
             return;
