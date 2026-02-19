@@ -84,7 +84,7 @@ void menu() {
 
     while (testi) {
         cout << "---------------------------------------------------" << endl;
-        cout << "Studentu Rezultatu skaiciavimo aplikacija " << endl;
+        cout << "Studentu Rezultatu skaiciavimo aplikacija (Masyvai) " << endl;
         cout << "---------------------------------------------------" << endl;
         cout << "1. Ivesti duomenis ranka " << endl;
         cout << "2. Generuoti tik pazymius " << endl;
@@ -125,7 +125,16 @@ void menu() {
 }
 
 void inputas(Studentas grupe[], int& grupesDydis) {
-    for (int ii = 0; ii < 2; ii++) {
+    int studentuKiekis;
+    cout << "Kiek studentu norite sugeneruoti? ";
+    while (!(cin >> studentuKiekis) || studentuKiekis < 1) {
+        cout << "Klaida! Iveskite teigiama skaiciu: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    cout << "---------------------------------------------------" << endl;
+
+    for (int ii = 0; ii < studentuKiekis; ii++) {
         if (grupesDydis >= MAX_STUDENTU) {
             cout << "Pasiektas maksimalus studentu skaicius!" << endl;
             return;

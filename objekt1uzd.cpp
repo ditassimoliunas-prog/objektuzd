@@ -1,5 +1,3 @@
-#ifndef USE_MASYVAI
-
 #include <iomanip>
 #include <vector>
 #include <iostream>
@@ -78,7 +76,7 @@ void menu() {
 
     while (testi) {
         cout << "---------------------------------------------------" << endl;
-        cout << "Studentu Rezultatu skaiciavimo aplikacija " << endl;
+        cout << "Studentu Rezultatu skaiciavimo aplikacija (Vektoriai) " << endl;
         cout << "---------------------------------------------------" << endl;
         cout << "1. Ivesti duomenis ranka " << endl;
         cout << "2. Generuoti tik pazymius " << endl;
@@ -121,7 +119,16 @@ void menu() {
     }
 }
 void inputas(vector<Studentas>& grupe) {
-    for (int ii = 0; ii < 2; ii++) {
+    int studentuKiekis;
+    cout << "Kiek studentu norite ivesti? ";
+    while (!(cin >> studentuKiekis) || studentuKiekis < 1) {
+        cout << "Klaida! Iveskite teigiama skaiciu: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    cout << "---------------------------------------------------" << endl;
+
+    for (int ii = 0; ii < studentuKiekis; ii++) {
         Studentas A;
 
         bool vardasGeras = false;
@@ -201,7 +208,16 @@ void inputas(vector<Studentas>& grupe) {
 void generuotiPaz(vector<Studentas>& grupe) {
     srand(time(0)); //Inicializuoja atsitiktine seed pagal laika
 
-    for (int ii = 0; ii < 2; ii++ ) {
+    int studentuKiekis;
+    cout << "Kiek studentu norite sugeneruoti? ";
+    while (!(cin >> studentuKiekis) || studentuKiekis < 1) {
+        cout << "Klaida! Iveskite teigiama skaiciu: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    cout << "---------------------------------------------------" << endl;
+
+    for (int ii = 0; ii < studentuKiekis; ii++ ) {
         Studentas A;
 
         bool vardasGeras = false;
@@ -261,10 +277,10 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
 
     // Nuskaitome failus
     vector<string> vyruVard, vyruPav, motVard, motPav;
-    ifstream vvard("vpv/vvard.txt");
-    ifstream vpav("vpv/vpav.txt");
-    ifstream mvard("vpv/mvard.txt");
-    ifstream mpav("vpv/mpav.txt");
+    ifstream vvard("../vpv/vvard.txt");
+    ifstream vpav("../vpv/vpav.txt");
+    ifstream mvard("../vpv/mvard.txt");
+    ifstream mpav("../vpv/mpav.txt");
 
     // Patikrinimas ar failai atsidare
     if (!vvard.is_open() || !vpav.is_open() || !mvard.is_open() || !mpav.is_open()) {
@@ -290,7 +306,16 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
         return;
     }
 
-    for (int ii = 0; ii < 2; ii++) {
+    int studentuKiekis;
+    cout << "Kiek studentu norite sugeneruoti? ";
+    while (!(cin >> studentuKiekis) || studentuKiekis < 1) {
+        cout << "Klaida! Iveskite teigiama skaiciu: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    cout << "---------------------------------------------------" << endl;
+
+    for (int ii = 0; ii < studentuKiekis; ii++) {
         Studentas A;
 
         // Lyties pasirinkimas
@@ -376,5 +401,3 @@ void outputas(const vector<Studentas>& grupe) {
         cout << left << setw(30) << fixed << setprecision(2) << A.rez << left << setw(40) << fixed << setprecision(2) << A.med << endl;
     }
 }
-
-#endif
