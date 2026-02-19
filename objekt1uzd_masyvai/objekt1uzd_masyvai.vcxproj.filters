@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="objekt1uzd.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="objekt1uzd_masyvai.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

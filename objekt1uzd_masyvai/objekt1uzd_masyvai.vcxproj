@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{16bef6ad-befa-451c-9472-5e264e076280}</ProjectGuid>
-    <RootNamespace>objekt1uzd</RootNamespace>
+    <ProjectGuid>{dca5cbb8-4916-4922-975c-d3cfc6fee446}</ProjectGuid>
+    <RootNamespace>objekt1uzdmasyvai</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="objekt1uzd.cpp" />
     <ClCompile Include="objekt1uzd_masyvai.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

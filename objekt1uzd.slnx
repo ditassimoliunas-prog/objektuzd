@@ -3,5 +3,6 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="../objekt1uzd_masyvai/objekt1uzd_masyvai.vcxproj" Id="dca5cbb8-4916-4922-975c-d3cfc6fee446" />
   <Project Path="objekt1uzd.vcxproj" Id="16bef6ad-befa-451c-9472-5e264e076280" />
 </Solution>
