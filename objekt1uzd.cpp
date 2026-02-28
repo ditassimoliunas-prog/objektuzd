@@ -492,7 +492,13 @@ void outputas(vector<Studentas>& grupe) {
     cout << "4. Pagal galutini bala (mediana) - didejimo tvarka" << endl;
 
     int pasirinkimas;
-    cin >> pasirinkimas;
+    while (!(cin >> pasirinkimas) || pasirinkimas < 1 || pasirinkimas > 4) {
+        cout << "Klaida! Iveskite skaiciu nuo 1 iki 4: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+
+    cout << "Pasirinktas rusiavimas: " << pasirinkimas << endl;
 
     // Pradedam rusiavimo laiko matavima
     auto pradzia = high_resolution_clock::now();
@@ -541,5 +547,5 @@ void outputas(vector<Studentas>& grupe) {
     auto pabaiga = high_resolution_clock::now();
     duration<double> trukme = pabaiga - pradzia;
     cout << "---------------------------------------------------" << endl;
-    cout << "Rusiavimo laikas: " << fixed << setprecision(7) << trukme.count() << " s" << endl;
+    cout << "Ivykdymo laikas: " << fixed << setprecision(7) << trukme.count() << " s" << endl;
 }
