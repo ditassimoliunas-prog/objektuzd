@@ -8,6 +8,7 @@
 #include <random>
 #include <ctime>
 #include <fstream>
+#include <filesystem>
 
 using std::cin;
 using std::cout;
@@ -23,6 +24,7 @@ using std::endl;
 using std::setprecision;
 using std::sort;
 using std::fixed;
+namespace fs = std::filesystem;
 
 struct Studentas {
     string vardas = "A", pavarde = "BB";
@@ -88,6 +90,7 @@ void inputas(vector<Studentas>& grupe);
 void outputas(const vector<Studentas>& grupe);
 void generuotiPaz(vector<Studentas>& grupe);
 void generuotiVardIrPav(vector<Studentas>& grupe);
+void skaitytiIsFailo(vector<Studentas>& grupe);
 void menu();
 int main() {
     menu();
@@ -101,12 +104,13 @@ void menu() {
 
     while (testi) {
         cout << "---------------------------------------------------" << endl;
-        cout << "Studentu Rezultatu skaiciavimo aplikacija (Vektoriai) " << endl;
+        cout << "Studentu Rezultatu skaiciavimo aplikacija" << endl;
         cout << "---------------------------------------------------" << endl;
         cout << "1. Ivesti duomenis ranka " << endl;
         cout << "2. Generuoti tik pazymius " << endl;
         cout << "3. Generuoti studentu vardus, pavardes ir pazymius " << endl;
-        cout << "4. Baigti darba " << endl;
+        cout << "4. Nuskaityti duomenis is failo " << endl;
+        cout << "5. Baigti darba " << endl;
         cin >> pas;
 
         // Pasirinkimo isvestys
@@ -130,13 +134,19 @@ void menu() {
             grupe.clear();
             break;
         case 4:
+            cout << "4. Nuskaityti duomenis is failo " << endl;
+            skaitytiIsFailo(grupe);
+            outputas(grupe);
+            grupe.clear();
+            break;
+        case 5:
             cout << "Programa uzdaroma " << endl;
             testi = false;
             break;
 
         // Isvestus ivedus netinkama pasirinkima
         default:
-            cout << "Klaida! Pasirinkite skaiciu nuo 1 iki 4 " << endl;
+            cout << "Klaida! Pasirinkite skaiciu nuo 1 iki 5 " << endl;
             cin.clear();
             cin.ignore(1000, '\n');
             break;
@@ -418,14 +428,69 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
 
 }
 
+void skaitytiIsFailo(vector<Studentas>& grupe) {
+    string failoPavadinimas;
+    cout << "Iveskite failo pavadinima: ";
+    cin >> failoPavadinimas;
+
+    // Pridedame Studentai_test kataloga
+    string kelias = "..\\Studentai_test\\" + failoPavadinimas;
+
+    ifstream failas(kelias);
+    if (!failas.is_open()) {
+        cout << "Klaida! Nepavyko atidaryti failo: " << kelias << endl;
+        return;
+    }
+
+    // Praleisti antraste
+    string eilute;
+    getline(failas, eilute);
+
+    // Skaityti studentus
+    while (failas >> eilute) {
+        Studentas A;
+        A.vardas = eilute;
+        failas >> A.pavarde;
+
+        vector<int> paz;
+        int sk;
+        while (failas >> sk) {
+            paz.push_back(sk);
+            if (failas.peek() == '\n') break;
+        }
+
+        if (!paz.empty()) {
+            A.egz = paz.back();
+            paz.pop_back();
+            A.paz = paz;
+            A.rez = galutinisBalas(vidurkis(A.paz), A.egz);
+            A.med = galutinisBalas(mediana(A.paz), A.egz);
+            grupe.push_back(A);
+        }
+        failas.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+
+    failas.close();
+    cout << "Nuskaityta " << grupe.size() << " studentu!" << endl;
+}
+
 
 
 void outputas(const vector<Studentas>& grupe) {
-    for (auto A : grupe) {
-        cout << left << setw(10) << "Vardas " << left << setw(20) << "Pavarde " << left << setw(30) << "Galutinis (Vid.) " << left << setw(40) << "Galutinis (Med.) " << endl;
-        cout << left << setw(10) << A.vardas << left << setw(20) << A.pavarde;
-        //for (auto k : A.paz) cout << setw(3) << k;
-        //cout << setw(5) << A.egz;
-        cout << left << setw(30) << fixed << setprecision(2) << A.rez << left << setw(40) << fixed << setprecision(2) << A.med << endl;
+    if (grupe.empty()) {
+        cout << "Nera studentu duomenu!" << endl;
+        return;
+    }
+
+    // Antrastes eilute
+    cout << left << setw(20) << "Vardas" << setw(20) << "Pavarde" 
+         << setw(20) << "Galutinis (Vid.)" << setw(20) << "Galutinis (Med.)" << endl;
+    cout << string(80, '-') << endl;
+
+    // Studentu duomenys
+    for (const auto& A : grupe) {
+        cout << left << setw(20) << A.vardas << setw(20) << A.pavarde
+             << setw(20) << fixed << setprecision(2) << A.rez 
+             << setw(20) << fixed << setprecision(2) << A.med << endl;
     }
 }
