@@ -1,0 +1,11 @@
+Vardas			Pavarde			ND1	ND2	ND3	ND4	ND5	Egzaminas
+Jonas			Kazlauskas		8	2	4	5	5	7
+Matas			Marciulionis		5	4	9	8	2	4
+Jokubas			Sabonis			4	7	8	6	8	3
+Antanas			Jankunas		2	5	7	5	9	4
+Petras			Kleiza			8	5	8	6	3	6
+Marius			Kurtinaitis		9	8	6	5	8	3
+Kazys			Valanciunas		7	6	5	4	9	7
+Vytautas		Kuzminskas		10	10	10	10	10	10
+Dainius			Gudaitis		8	6	4	8	9	10
+Gintaras		Musteikis		8	9	7	5	3	7
