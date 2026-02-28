@@ -1,4 +1,3 @@
-Programos v.01 veikimo principas.
-Programa yra skirta sugeneruoti studentų vardus ar pažymius bei apskaičiuoti rezultatų vidurkį ir medianą.
-Paleidus programą turi būti išvesti 4 pasirinkimai: Įvesti studentų ir pažymių duomenis ranka, Automatiškai sugeneruoti tik pažymius, sugeneruoti pažymius ir studentus ir galiausiai užbaigti programą.
-Yra dvi skirtingos aplikacijos versijos, kurių veikimo principas yra vienodas, tik vienas kodas parašytas su vektoriais, kitas su c tipo masyvais.
+Programos v.02 veikimo principas.
+Programa atlieka tokias pačias funkcijas kaip ir v.01 versija, tačiau yra pridėta dar viena funkcija - skaityti studentų rezultatus iš failų.
+Taip pat dabar programa pateikia pasirinkimą studentų rezultatus išvesti pagal naudotojo pasirenkamą rūšiavimo būdą.
