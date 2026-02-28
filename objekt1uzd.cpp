@@ -59,6 +59,31 @@ double mediana(vector <int> paz) {
     }
 }
 
+// Vidurkio skaiciavimas is pazymiu vektoriaus
+double vidurkis(const vector<int>& paz) {
+    if (paz.empty()) return 0.0;
+    int sum = 0;
+    for (int p : paz) {
+        sum += p;
+    }
+    return sum * 1.0 / paz.size();
+}
+
+// Galutinio balo skaiciavimas pagal vidurki/mediana ir egzamina
+double galutinisBalas(double vidMed, int egz) {
+    return vidMed * 0.4 + egz * 0.6;
+}
+
+// Generuoti atsitiktini pazymi nuo 0 iki 10
+int generuotiPazymi() {
+    return rand() % 11;
+}
+
+// Generuoti atsitiktini egzamina nuo 0 iki 10
+int generuotiEgzamina() {
+    return rand() % 11;
+}
+
 void inputas(vector<Studentas>& grupe);
 void outputas(const vector<Studentas>& grupe);
 void generuotiPaz(vector<Studentas>& grupe);
@@ -147,7 +172,7 @@ void inputas(vector<Studentas>& grupe) {
 
         cout << "---------------------------------------------------" << endl;
         cout << "Iveskite semestro ivertinimus. Kiek ju bus? " << endl;
-        int n, sum = 0;
+        int n;
         while (!(cin >> n) || n < 0) {
             cout << "Klaida! Iveskite teigiama skaiciu: ";
             cin.clear();
@@ -172,7 +197,6 @@ void inputas(vector<Studentas>& grupe) {
                 }
             }
             A.paz.push_back(temp);
-            sum += temp;
         }
 
         bool egzaminasTeisingas = false;
@@ -193,10 +217,12 @@ void inputas(vector<Studentas>& grupe) {
         cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
-        A.rez = sum * 1.0 / (n * 1.0) * 0.4 + A.egz * 0.6;
+        double vid = vidurkis(A.paz);
+        A.rez = galutinisBalas(vid, A.egz);
 
         // Medianos skaiciavimas
-        A.med = mediana(A.paz) * 0.4 + A.egz * 0.6;
+        double med = mediana(A.paz);
+        A.med = galutinisBalas(med, A.egz);
 
         grupe.push_back(A);
         A.paz.clear();
@@ -236,7 +262,7 @@ void generuotiPaz(vector<Studentas>& grupe) {
 
         cout << "---------------------------------------------------" << endl;
         cout << "Iveskite semestro pazymiu kieki: " << endl;
-        int n, sum = 0;
+        int n;
         while (!(cin >> n) || n < 0) {
             cout << "Klaida! Iveskite teigiama skaiciu: ";
             cin.clear();
@@ -248,24 +274,25 @@ void generuotiPaz(vector<Studentas>& grupe) {
         // Automatiskai generuojami pazymiai
         cout << "Pazymiu ivertinmai: ";
         for (int i = 0; i < n; i++) {
-            int temp = rand() % 11; //Sugeneruoja skaiciu nuo 0 iki 10
+            int temp = generuotiPazymi();
             A.paz.push_back(temp);
-            sum += temp;
             cout << temp << " ";
         }
 
         cout << endl;
 
         // Automatiskai generuojamas egzaminas
-        A.egz = rand() % 11;
+        A.egz = generuotiEgzamina();
         cout << "Egzamino ivertinimas: " << A.egz << endl;
         cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
-        A.rez = sum * 1.0 / (n * 1.0) * 0.4 + A.egz * 0.6;
+        double vid = vidurkis(A.paz);
+        A.rez = galutinisBalas(vid, A.egz);
 
         // Medianos skaiciavimas
-        A.med = mediana(A.paz) * 0.4 + A.egz * 0.6;
+        double med = mediana(A.paz);
+        A.med = galutinisBalas(med, A.egz);
 
         grupe.push_back(A);
         A.paz.clear();
@@ -354,7 +381,7 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
 
         // Klausimas kiek pazymiu sugeneruoti
         cout << "Iveskite semestro pazymiu kieki: " << endl;
-        int n, sum = 0;
+        int n;
         while (!(cin >> n) || n < 0) {
             cout << "Klaida! Iveskite teigiama skaiciu: ";
             cin.clear();
@@ -366,23 +393,24 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
         // Automatiskai sugeneruojami pazymiai
         cout << "Pazymiu ivertinimai: ";
         for (int i = 0; i < n; i++) {
-            int temp = rand() % 11;
+            int temp = generuotiPazymi();
             A.paz.push_back(temp);
-            sum += temp;
             cout << temp << " ";
         }
         cout << endl;
 
         // Automatiskai sugeneruojamas egzaminas
-        A.egz = rand() % 11;
+        A.egz = generuotiEgzamina();
         cout << "Egzamino ivertinimas: " << A.egz << endl;
         cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
-        A.rez = sum * 1.0 / (n * 1.0) * 0.4 + A.egz * 0.6;
+        double vid = vidurkis(A.paz);
+        A.rez = galutinisBalas(vid, A.egz);
 
         // Medianos skaiciavimas
-        A.med = mediana(A.paz) * 0.4 + A.egz * 0.6;
+        double med = mediana(A.paz);
+        A.med = galutinisBalas(med, A.egz);
 
         grupe.push_back(A);
         A.paz.clear();
