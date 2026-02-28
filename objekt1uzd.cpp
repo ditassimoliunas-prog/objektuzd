@@ -87,7 +87,7 @@ int generuotiEgzamina() {
 }
 
 void inputas(vector<Studentas>& grupe);
-void outputas(const vector<Studentas>& grupe);
+void outputas(vector<Studentas>& grupe);
 void generuotiPaz(vector<Studentas>& grupe);
 void generuotiVardIrPav(vector<Studentas>& grupe);
 void skaitytiIsFailo(vector<Studentas>& grupe);
@@ -474,15 +474,52 @@ void skaitytiIsFailo(vector<Studentas>& grupe) {
     cout << "Nuskaityta " << grupe.size() << " studentu!" << endl;
 }
 
-
-
-void outputas(const vector<Studentas>& grupe) {
+void outputas(vector<Studentas>& grupe) {
     if (grupe.empty()) {
         cout << "Nera studentu duomenu!" << endl;
         return;
     }
 
+    // Klausiame kaip rusiuoti
+    cout << "---------------------------------------------------" << endl;
+    cout << "Pasirinkite rusiavimo buda:" << endl;
+    cout << "1. Pagal varda (A-Z)" << endl;
+    cout << "2. Pagal pavarde (A-Z)" << endl;
+    cout << "3. Pagal galutini bala (vidurki) - didejimo tvarka" << endl;
+    cout << "4. Pagal galutini bala (mediana) - didejimo tvarka" << endl;
+
+    int pasirinkimas;
+    cin >> pasirinkimas;
+
+    // Rusiuojame pagal pasirinkima
+    switch (pasirinkimas) {
+    case 1:
+        sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
+            return a.vardas < b.vardas;
+        });
+        break;
+    case 2:
+        sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
+            return a.pavarde < b.pavarde;
+        });
+        break;
+    case 3:
+        sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
+            return a.rez < b.rez;
+        });
+        break;
+    case 4:
+        sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
+            return a.med < b.med;
+        });
+        break;
+    default:
+        cout << "Klaida! Neteisingas pasirinkimas. Rodoma be rusiavimo." << endl;
+        break;
+    }
+
     // Antrastes eilute
+    cout << "---------------------------------------------------" << endl;
     cout << left << setw(20) << "Vardas" << setw(20) << "Pavarde" 
          << setw(20) << "Galutinis (Vid.)" << setw(20) << "Galutinis (Med.)" << endl;
     cout << string(80, '-') << endl;
