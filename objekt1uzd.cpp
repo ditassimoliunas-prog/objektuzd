@@ -9,6 +9,7 @@
 #include <ctime>
 #include <fstream>
 #include <filesystem>
+#include <chrono>
 
 using std::cin;
 using std::cout;
@@ -25,6 +26,8 @@ using std::setprecision;
 using std::sort;
 using std::fixed;
 namespace fs = std::filesystem;
+using std::chrono::high_resolution_clock;
+using std::chrono::duration;
 
 struct Studentas {
     string vardas = "A", pavarde = "BB";
@@ -491,6 +494,9 @@ void outputas(vector<Studentas>& grupe) {
     int pasirinkimas;
     cin >> pasirinkimas;
 
+    // Pradedam rusiavimo laiko matavima
+    auto pradzia = high_resolution_clock::now();
+
     // Rusiuojame pagal pasirinkima
     switch (pasirinkimas) {
     case 1:
@@ -530,4 +536,10 @@ void outputas(vector<Studentas>& grupe) {
              << setw(20) << fixed << setprecision(2) << A.rez 
              << setw(20) << fixed << setprecision(2) << A.med << endl;
     }
+
+    // Baigiamas rusiavimo laiko matavimas
+    auto pabaiga = high_resolution_clock::now();
+    duration<double> trukme = pabaiga - pradzia;
+    cout << "---------------------------------------------------" << endl;
+    cout << "Rusiavimo laikas: " << fixed << setprecision(7) << trukme.count() << " s" << endl;
 }
