@@ -1,9 +1,10 @@
-#include "../header_files/output.h"
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
 #include <limits>
 #include <chrono>
+
+#include "../header_files/output.h"
 
 using std::cin;
 using std::cout;

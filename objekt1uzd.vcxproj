@@ -131,6 +131,7 @@
     <ClCompile Include="extra_cpp\mat_funkcijos.cpp" />
     <ClCompile Include="extra_cpp\input.cpp" />
 	<ClCompile Include="extra_cpp\output.cpp" />
+	<ClCompile Include="extra_cpp\duomenu_valdymas.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
