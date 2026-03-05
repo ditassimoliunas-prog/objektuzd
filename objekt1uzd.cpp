@@ -11,7 +11,7 @@
 #include <filesystem>
 #include <chrono>
 
-#include "extra_cpp/mat_funkcijos.cpp"
+#include "header_files/mat_funkcijos.h"
 #include "header_files/input.h"
 
 using std::cin;
