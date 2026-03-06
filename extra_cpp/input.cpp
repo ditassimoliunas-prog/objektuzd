@@ -12,16 +12,9 @@ using std::numeric_limits;
 using std::streamsize;
 
 void inputas(vector<Studentas>& grupe) {
-    int studentuKiekis;
-    cout << "Kiek studentu norite ivesti? ";
-    while (!(cin >> studentuKiekis) || studentuKiekis < 1) {
-        cout << "Klaida! Iveskite teigiama skaiciu: ";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-    cout << "---------------------------------------------------" << endl;
+    bool testiStudenta = true;
 
-    for (int ii = 0; ii < studentuKiekis; ii++) {
+    while (testiStudenta) {
         Studentas A;
 
         bool vardasGeras = false;
@@ -39,33 +32,27 @@ void inputas(vector<Studentas>& grupe) {
         }
 
         cout << "---------------------------------------------------" << endl;
-        cout << "Iveskite semestro ivertinimus. Kiek ju bus? " << endl;
-        int n;
-        while (!(cin >> n) || n < 0) {
-            cout << "Klaida! Iveskite teigiama skaiciu: ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }
-        cout << "---------------------------------------------------" << endl;
-        for (int i = 0; i < n; i++) {
-            int temp;
-            bool pazymisTeisingas = false;
-            while (!pazymisTeisingas) {
-                cout << "Iveskite " << i + 1 << " pazymio ivertinima is " << n << " (0-10): ";
-                if (!(cin >> temp)) {
-                    cout << "Klaida! Iveskite skaiciu!" << endl;
-                    cin.clear();
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                }
-                else if (temp < 0 || temp > 10) {
-                    cout << "Klaida! Pazymys turi buti nuo 0 iki 10!" << endl;
-                }
-                else {
-                    pazymisTeisingas = true;
-                }
+        cout << "Iveskite semestro ivertinimus (0-10). Iveskite -1 kad baigtumete: " << endl;
+        int temp;
+        while (true) {
+            cout << "Iveskite pazymi (arba -1 kad baigtumete): ";
+            if (!(cin >> temp)) {
+                cout << "Klaida! Iveskite skaiciu!" << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
-            A.paz.push_back(temp);
+            else if (temp == -1) {
+                break;
+            }
+            else if (temp < 0 || temp > 10) {
+                cout << "Klaida! Pazymys turi buti nuo 0 iki 10!" << endl;
+            }
+            else {
+                A.paz.push_back(temp);
+            }
         }
+
+        cout << "---------------------------------------------------" << endl;
 
         bool egzaminasTeisingas = false;
         while (!egzaminasTeisingas) {
@@ -85,16 +72,42 @@ void inputas(vector<Studentas>& grupe) {
         cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
-        double vid = vidurkis(A.paz);
-        A.rez = galutinisBalas(vid, A.egz);
-
-        // Medianos skaiciavimas
-        double med = mediana(A.paz);
-        A.med = galutinisBalas(med, A.egz);
+        if (!A.paz.empty()) {
+            double vid = vidurkis(A.paz);
+            A.rez = galutinisBalas(vid, A.egz);
+            // Medianos skaiciavimas
+            double med = mediana(A.paz);
+            A.med = galutinisBalas(med, A.egz);
+        }
+        else {
+            A.rez = A.egz * 0.6;
+            A.med = A.egz * 0.6;
+        }
 
         grupe.push_back(A);
         A.paz.clear();
 
-    }// galima priskirti grupej, kai turime A.rez; pushbackinam studento varda
+        // Klausimas ar testi
+        char atsakymas;
+        bool atsakymasTeisingas = false;
+        while (!atsakymasTeisingas) {
+            cout << "Ar norite ivesti dar viena studenta? (T/N): ";
+            cin >> atsakymas;
+            if (atsakymas == 'T' || atsakymas == 't') {
+                testiStudenta = true;
+                atsakymasTeisingas = true;
+                cout << "---------------------------------------------------" << endl;
+            }
+            else if (atsakymas == 'N' || atsakymas == 'n') {
+                testiStudenta = false;
+                atsakymasTeisingas = true;
+            }
+            else {
+                cout << "Klaida! Iveskite T arba N!" << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+        }
+    }
 }
 

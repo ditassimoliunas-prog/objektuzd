@@ -79,7 +79,6 @@ void outputas(vector<Studentas>& grupe) {
     cout << "---------------------------------------------------" << endl;
     cout << left << setw(20) << "Vardas" << setw(20) << "Pavarde"
         << setw(20) << "Galutinis (Vid.)" << setw(20) << "Galutinis (Med.)" << endl;
-    cout << string(80, '-') << endl;
 
     // Studentu duomenys
     for (const auto& A : grupe) {

@@ -54,7 +54,6 @@ void menu() {
         case 4:
             cout << "4. Nuskaityti duomenis is failo " << endl;
             skaitytiIsFailo(grupe);
-            outputas(grupe);
             grupe.clear();
             break;
         case 5:
