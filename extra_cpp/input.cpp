@@ -1,7 +1,8 @@
-#include "../header_files/input.h"
-#include "../header_files/mat_funkcijos.h"
 #include <iostream>
 #include <limits>
+
+#include "../header_files/input.h"
+#include "../header_files/mat_funkcijos.h"
 
 using std::cin;
 using std::cout;

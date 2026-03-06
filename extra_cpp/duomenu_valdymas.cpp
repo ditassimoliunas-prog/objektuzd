@@ -9,6 +9,7 @@
 #include <fstream>
 #include <iomanip>
 #include <chrono>
+#include <stdexcept>
 
 #include "../header_files/duomenu_valdymas.h"
 #include "../header_files/mat_funkcijos.h"
@@ -30,6 +31,8 @@ using std::setprecision;
 using std::sort;
 using std::chrono::high_resolution_clock;
 using std::chrono::duration;
+using std::runtime_error;
+using std::exception;
 
 
 
@@ -118,36 +121,35 @@ void generuotiPaz(vector<Studentas>& grupe) {
 void generuotiVardIrPav(vector<Studentas>& grupe) {
     srand(time(0));
 
-    // Nuskaitome failus
-    vector<string> vyruVard, vyruPav, motVard, motPav;
-    ifstream vvard("../vpv/vvard.txt");
-    ifstream vpav("../vpv/vpav.txt");
-    ifstream mvard("../vpv/mvard.txt");
-    ifstream mpav("../vpv/mpav.txt");
+    try {
+        // Nuskaitome failus
+        vector<string> vyruVard, vyruPav, motVard, motPav;
+        ifstream vvard("../vpv/vvard.txt");
+        ifstream vpav("../vpv/vpav.txt");
+        ifstream mvard("../vpv/mvard.txt");
+        ifstream mpav("../vpv/mpav.txt");
 
-    // Patikrinimas ar failai atsidare
-    if (!vvard.is_open() || !vpav.is_open() || !mvard.is_open() || !mpav.is_open()) {
-        cout << "Klaida! Nepavyko atidaryti vieno ar daugiau failu su vardais ir pavardemis " << endl;
-        return;
-    }
+        // Patikrinimas ar failai atsidare
+        if (!vvard.is_open() || !vpav.is_open() || !mvard.is_open() || !mpav.is_open()) {
+            throw runtime_error("Nepavyko atidaryti vieno ar daugiau failu su vardais ir pavardemis!");
+        }
 
-    // Nuskaitomi visi vardai ir pavardes
-    string eilute;
-    while (vvard >> eilute) vyruVard.push_back(eilute);
-    while (vpav >> eilute) vyruPav.push_back(eilute);
-    while (mvard >> eilute) motVard.push_back(eilute);
-    while (mpav >> eilute) motPav.push_back(eilute);
+        // Nuskaitomi visi vardai ir pavardes
+        string eilute;
+        while (vvard >> eilute) vyruVard.push_back(eilute);
+        while (vpav >> eilute) vyruPav.push_back(eilute);
+        while (mvard >> eilute) motVard.push_back(eilute);
+        while (mpav >> eilute) motPav.push_back(eilute);
 
-    vvard.close();
-    vpav.close();
-    mvard.close();
-    mpav.close();
+        vvard.close();
+        vpav.close();
+        mvard.close();
+        mpav.close();
 
-    // Patikrinama ar failai ne tusti
-    if (vyruVard.empty() || vyruPav.empty() || motVard.empty() || motPav.empty()) {
-        cout << "Klaida! Vienas ar daugiau failu yra tusti! " << endl;
-        return;
-    }
+        // Patikrinama ar failai ne tusti
+        if (vyruVard.empty() || vyruPav.empty() || motVard.empty() || motPav.empty()) {
+            throw runtime_error("Vienas ar daugiau failu yra tusti!");
+        }
 
     bool testiStudenta = true;
 
@@ -228,71 +230,90 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
             }
         }
     }
+    }
+    catch (const runtime_error& e) {
+        cout << "Klaida generuojant studentus: " << e.what() << endl;
+    }
+    catch (const exception& e) {
+        cout << "Netiketa klaida: " << e.what() << endl;
+    }
 }
 
 void skaitytiIsFailo(vector<Studentas>& grupe) {
-    string failoPavadinimas;
-    cout << "Iveskite failo pavadinima: ";
-    cin >> failoPavadinimas;
+    try {
+        string failoPavadinimas;
+        cout << "Iveskite failo pavadinima: ";
+        cin >> failoPavadinimas;
 
-    // Pridedame Studentai_test kataloga
-    string kelias = "..\\Studentai_test\\" + failoPavadinimas;
+        // Pridedame Studentai_test kataloga
+        string kelias = "..\\Studentai_test\\" + failoPavadinimas;
 
-    ifstream failas(kelias);
-    if (!failas.is_open()) {
-        cout << "Klaida! Nepavyko atidaryti failo: " << kelias << endl;
-        return;
+        ifstream failas(kelias);
+        if (!failas.is_open()) {
+            throw runtime_error("Nepavyko atidaryti failo: " + kelias);
+        }
+
+        // Praleisti antraste
+        string eilute;
+        getline(failas, eilute);
+
+        // Skaityti studentus
+        while (failas >> eilute) {
+            Studentas A;
+            A.vardas = eilute;
+            failas >> A.pavarde;
+
+            vector<int> paz;
+            int sk;
+            while (failas >> sk) {
+                paz.push_back(sk);
+                if (failas.peek() == '\n') break;
+            }
+
+            if (!paz.empty()) {
+                A.egz = paz.back();
+                paz.pop_back();
+                A.paz = paz;
+                A.rez = galutinisBalas(vidurkis(A.paz), A.egz);
+                A.med = galutinisBalas(mediana(A.paz), A.egz);
+                grupe.push_back(A);
+            }
+            failas.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+
+        failas.close();
+
+        if (grupe.empty()) {
+            throw runtime_error("Failas yra tuscias arba neteisingai formatuotas!");
+        }
+
+        cout << "Nuskaityta " << grupe.size() << " studentu!" << endl;
+
+        // Klausiame kur isvesti rezultatus
+        if (!grupe.empty()) {
+            cout << "---------------------------------------------------" << endl;
+            cout << "Pasirinkite isvesties buda:" << endl;
+            cout << "1. Isvesti i terminala" << endl;
+            cout << "2. Irasyti i faila" << endl;
+            int isvestiesPasirinkimas;
+            while (!(cin >> isvestiesPasirinkimas) || (isvestiesPasirinkimas != 1 && isvestiesPasirinkimas != 2)) {
+                cout << "Klaida! Pasirinkite 1 arba 2: ";
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+            if (isvestiesPasirinkimas == 1) {
+                outputas(grupe);
+            }
+            else {
+                rasytIFaila(grupe);
+            }
+        }
     }
-
-    // Praleisti antraste
-    string eilute;
-    getline(failas, eilute);
-
-    // Skaityti studentus
-    while (failas >> eilute) {
-        Studentas A;
-        A.vardas = eilute;
-        failas >> A.pavarde;
-
-        vector<int> paz;
-        int sk;
-        while (failas >> sk) {
-            paz.push_back(sk);
-            if (failas.peek() == '\n') break;
-        }
-
-        if (!paz.empty()) {
-            A.egz = paz.back();
-            paz.pop_back();
-            A.paz = paz;
-            A.rez = galutinisBalas(vidurkis(A.paz), A.egz);
-            A.med = galutinisBalas(mediana(A.paz), A.egz);
-            grupe.push_back(A);
-        }
-        failas.ignore(numeric_limits<streamsize>::max(), '\n');
+    catch (const runtime_error& e) {
+        cout << "Klaida skaitant is failo: " << e.what() << endl;
     }
-
-    failas.close();
-    cout << "Nuskaityta " << grupe.size() << " studentu!" << endl;
-
-    // Klausiame kur isvesti rezultatus
-    if (!grupe.empty()) {
-        cout << "---------------------------------------------------" << endl;
-        cout << "Pasirinkite isvesties buda:" << endl;
-        cout << "1. Isvesti i terminala" << endl;
-        cout << "2. Irasyti i faila" << endl;
-        int isvestiesPasirinkimas;
-        while (!(cin >> isvestiesPasirinkimas) || (isvestiesPasirinkimas != 1 && isvestiesPasirinkimas != 2)) {
-            cout << "Klaida! Pasirinkite 1 arba 2: ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }
-        if (isvestiesPasirinkimas == 1) {
-            outputas(grupe);
-        }
-        else {
-            rasytIFaila(grupe);
-        }
+    catch (const exception& e) {
+        cout << "Netiketa klaida: " << e.what() << endl;
     }
 }
 
