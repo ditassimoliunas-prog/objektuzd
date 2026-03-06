@@ -393,8 +393,8 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
 
 
 void outputas(const vector<Studentas>& grupe) {
+    cout << left << setw(10) << "Vardas " << left << setw(20) << "Pavarde " << left << setw(30) << "Galutinis (Vid.) " << left << setw(40) << "Galutinis (Med.) " << endl;
     for (auto A : grupe) {
-        cout << left << setw(10) << "Vardas " << left << setw(20) << "Pavarde " << left << setw(30) << "Galutinis (Vid.) " << left << setw(40) << "Galutinis (Med.) " << endl;
         cout << left << setw(10) << A.vardas << left << setw(20) << A.pavarde;
         //for (auto k : A.paz) cout << setw(3) << k;
         //cout << setw(5) << A.egz;
