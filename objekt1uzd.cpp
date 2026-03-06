@@ -1,4 +1,4 @@
-#include <iomanip>
+﻿#include <iomanip>
 #include <vector>
 #include <iostream>
 #include <string>
@@ -18,6 +18,7 @@ using std::vector;
 using std::numeric_limits;
 using std::streamsize;
 using std::ifstream;
+using std::ofstream;
 using std::left;
 using std::right;
 using std::setw;
@@ -94,6 +95,7 @@ void outputas(vector<Studentas>& grupe);
 void generuotiPaz(vector<Studentas>& grupe);
 void generuotiVardIrPav(vector<Studentas>& grupe);
 void skaitytiIsFailo(vector<Studentas>& grupe);
+void rasytIFaila(vector<Studentas>& grupe);
 void menu();
 int main() {
     menu();
@@ -139,7 +141,23 @@ void menu() {
         case 4:
             cout << "4. Nuskaityti duomenis is failo " << endl;
             skaitytiIsFailo(grupe);
-            outputas(grupe);
+            if (!grupe.empty()) {
+                cout << "Pasirinkite isvesties buda:" << endl;
+                cout << "1. Isvesti i terminala" << endl;
+                cout << "2. Irasyti i faila" << endl;
+                int isvestiesPasirinkimas;
+                while (!(cin >> isvestiesPasirinkimas) || (isvestiesPasirinkimas != 1 && isvestiesPasirinkimas != 2)) {
+                    cout << "Klaida! Pasirinkite 1 arba 2: ";
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                }
+                if (isvestiesPasirinkimas == 1) {
+                    outputas(grupe);
+                }
+                else {
+                    rasytIFaila(grupe);
+                }
+            }
             grupe.clear();
             break;
         case 5:
@@ -157,16 +175,9 @@ void menu() {
     }
 }
 void inputas(vector<Studentas>& grupe) {
-    int studentuKiekis;
-    cout << "Kiek studentu norite ivesti? ";
-    while (!(cin >> studentuKiekis) || studentuKiekis < 1) {
-        cout << "Klaida! Iveskite teigiama skaiciu: ";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-    cout << "---------------------------------------------------" << endl;
+    bool testiStudenta = true;
 
-    for (int ii = 0; ii < studentuKiekis; ii++) {
+    while (testiStudenta) {
         Studentas A;
 
         bool vardasGeras = false;
@@ -184,33 +195,27 @@ void inputas(vector<Studentas>& grupe) {
         }
 
         cout << "---------------------------------------------------" << endl;
-        cout << "Iveskite semestro ivertinimus. Kiek ju bus? " << endl;
-        int n;
-        while (!(cin >> n) || n < 0) {
-            cout << "Klaida! Iveskite teigiama skaiciu: ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }
-        cout << "---------------------------------------------------" << endl;
-        for (int i = 0; i < n; i++) {
-            int temp;
-            bool pazymisTeisingas = false;
-            while (!pazymisTeisingas) {
-                cout << "Iveskite " << i + 1 << " pazymio ivertinima is " << n << " (0-10): ";
-                if (!(cin >> temp)) {
-                    cout << "Klaida! Iveskite skaiciu!" << endl;
-                    cin.clear();
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                }
-                else if (temp < 0 || temp > 10) {
-                    cout << "Klaida! Pazymys turi buti nuo 0 iki 10!" << endl;
-                }
-                else {
-                    pazymisTeisingas = true;
-                }
+        cout << "Iveskite semestro ivertinimus (0-10). Iveskite -1 kad baigtumete: " << endl;
+        int temp;
+        while (true) {
+            cout << "Iveskite pazymi (arba -1 kad baigtumete): ";
+            if (!(cin >> temp)) {
+                cout << "Klaida! Iveskite skaiciu!" << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
-            A.paz.push_back(temp);
+            else if (temp == -1) {
+                break;
+            }
+            else if (temp < 0 || temp > 10) {
+                cout << "Klaida! Pazymys turi buti nuo 0 iki 10!" << endl;
+            }
+            else {
+                A.paz.push_back(temp);
+            }
         }
+
+        cout << "---------------------------------------------------" << endl;
 
         bool egzaminasTeisingas = false;
         while (!egzaminasTeisingas) {
@@ -230,33 +235,52 @@ void inputas(vector<Studentas>& grupe) {
         cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
-        double vid = vidurkis(A.paz);
-        A.rez = galutinisBalas(vid, A.egz);
-
-        // Medianos skaiciavimas
-        double med = mediana(A.paz);
-        A.med = galutinisBalas(med, A.egz);
+        if (!A.paz.empty()) {
+            double vid = vidurkis(A.paz);
+            A.rez = galutinisBalas(vid, A.egz);
+            // Medianos skaiciavimas
+            double med = mediana(A.paz);
+            A.med = galutinisBalas(med, A.egz);
+        }
+        else {
+            A.rez = A.egz * 0.6;
+            A.med = A.egz * 0.6;
+        }
 
         grupe.push_back(A);
         A.paz.clear();
 
-    }// galima priskirti grupej, kai turime A.rez; pushbackinam studento varda
+        // Klausimas ar testi
+        char atsakymas;
+        bool atsakymasTeisingas = false;
+        while (!atsakymasTeisingas) {
+            cout << "Ar norite ivesti dar viena studenta? (T/N): ";
+            cin >> atsakymas;
+            if (atsakymas == 'T' || atsakymas == 't') {
+                testiStudenta = true;
+                atsakymasTeisingas = true;
+                cout << "---------------------------------------------------" << endl;
+            }
+            else if (atsakymas == 'N' || atsakymas == 'n') {
+                testiStudenta = false;
+                atsakymasTeisingas = true;
+            }
+            else {
+                cout << "Klaida! Iveskite T arba N!" << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+        }
+    }
 }
 
 // Atsitiktiniiu skaiciu generavimas
 void generuotiPaz(vector<Studentas>& grupe) {
-    srand(time(0)); //Inicializuoja atsitiktine seed pagal laika
+    srand(time(0));
 
-    int studentuKiekis;
-    cout << "Kiek studentu norite sugeneruoti? ";
-    while (!(cin >> studentuKiekis) || studentuKiekis < 1) {
-        cout << "Klaida! Iveskite teigiama skaiciu: ";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-    cout << "---------------------------------------------------" << endl;
+    bool testiStudenta = true;
 
-    for (int ii = 0; ii < studentuKiekis; ii++ ) {
+    while (testiStudenta) {
         Studentas A;
 
         bool vardasGeras = false;
@@ -274,24 +298,17 @@ void generuotiPaz(vector<Studentas>& grupe) {
         }
 
         cout << "---------------------------------------------------" << endl;
-        cout << "Iveskite semestro pazymiu kieki: " << endl;
-        int n;
-        while (!(cin >> n) || n < 0) {
-            cout << "Klaida! Iveskite teigiama skaiciu: ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }
 
-        cout << "---------------------------------------------------" << endl;
+        // Automatiskai generuojamas atsitiktinis pazymiu kiekis (3-10)
+        int n = rand() % 8 + 3;
 
         // Automatiskai generuojami pazymiai
-        cout << "Pazymiu ivertinmai: ";
+        cout << "Sugeneruota " << n << " pazymiu: ";
         for (int i = 0; i < n; i++) {
             int temp = generuotiPazymi();
             A.paz.push_back(temp);
             cout << temp << " ";
         }
-
         cout << endl;
 
         // Automatiskai generuojamas egzaminas
@@ -300,16 +317,42 @@ void generuotiPaz(vector<Studentas>& grupe) {
         cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
-        double vid = vidurkis(A.paz);
-        A.rez = galutinisBalas(vid, A.egz);
-
-        // Medianos skaiciavimas
-        double med = mediana(A.paz);
-        A.med = galutinisBalas(med, A.egz);
+        if (!A.paz.empty()) {
+            double vid = vidurkis(A.paz);
+            A.rez = galutinisBalas(vid, A.egz);
+            // Medianos skaiciavimas
+            double med = mediana(A.paz);
+            A.med = galutinisBalas(med, A.egz);
+        }
+        else {
+            A.rez = A.egz * 0.6;
+            A.med = A.egz * 0.6;
+        }
 
         grupe.push_back(A);
-        A.paz.clear();
-    }  
+
+        // Klausimas ar testi
+        char atsakymas;
+        bool atsakymasTeisingas = false;
+        while (!atsakymasTeisingas) {
+            cout << "Ar norite generuoti dar viena studenta? (T/N): ";
+            cin >> atsakymas;
+            if (atsakymas == 'T' || atsakymas == 't') {
+                testiStudenta = true;
+                atsakymasTeisingas = true;
+                cout << "---------------------------------------------------" << endl;
+            }
+            else if (atsakymas == 'N' || atsakymas == 'n') {
+                testiStudenta = false;
+                atsakymasTeisingas = true;
+            }
+            else {
+                cout << "Klaida! Iveskite T arba N!" << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+        }
+    }
 }
 
 void generuotiVardIrPav(vector<Studentas>& grupe) {
@@ -346,37 +389,16 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
         return;
     }
 
-    int studentuKiekis;
-    cout << "Kiek studentu norite sugeneruoti? ";
-    while (!(cin >> studentuKiekis) || studentuKiekis < 1) {
-        cout << "Klaida! Iveskite teigiama skaiciu: ";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-    cout << "---------------------------------------------------" << endl;
+    bool testiStudenta = true;
 
-    for (int ii = 0; ii < studentuKiekis; ii++) {
+    while (testiStudenta) {
         Studentas A;
 
-        // Lyties pasirinkimas
-        char lytis;
-        bool lytisTinka = false;
-        while (!lytisTinka) {
-            cout << "Pasirinkite lyti (V - vyras, M - moteris): ";
-            cin >> lytis;
-
-            if (lytis == 'V' || lytis == 'v' || lytis == 'M' || lytis == 'm') {
-                lytisTinka = true;
-            }
-            else {
-                cout << "Klaida! Iveskite V arba M! " << endl;
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            }
-        }
+        // Atsitiktinai parenka lyti (0 - vyras, 1 - moteris)
+        int lytis = rand() % 2;
 
         // Generuojamas vardas ir pavarde pagal lyti
-        if (lytis == 'V' || lytis == 'v') {
+        if (lytis == 0) {
             int vardIndex = rand() % vyruVard.size();
             int pavIndex = rand() % vyruPav.size();
             A.vardas = vyruVard[vardIndex];
@@ -389,22 +411,14 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
             A.pavarde = motPav[pavIndex];
         }
 
-        cout << "Sugenruotas vardas ir pavarde: " << A.vardas << " " << A.pavarde << endl;
+        cout << "Sugeneruotas vardas ir pavarde: " << A.vardas << " " << A.pavarde << endl;
         cout << "---------------------------------------------------" << endl;
 
-        // Klausimas kiek pazymiu sugeneruoti
-        cout << "Iveskite semestro pazymiu kieki: " << endl;
-        int n;
-        while (!(cin >> n) || n < 0) {
-            cout << "Klaida! Iveskite teigiama skaiciu: ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }
-
-        cout << "---------------------------------------------------" << endl;
+        // Automatiskai generuojamas atsitiktinis pazymiu kiekis (3-10)
+        int n = rand() % 8 + 3;
 
         // Automatiskai sugeneruojami pazymiai
-        cout << "Pazymiu ivertinimai: ";
+        cout << "Sugeneruota " << n << " pazymiu: ";
         for (int i = 0; i < n; i++) {
             int temp = generuotiPazymi();
             A.paz.push_back(temp);
@@ -418,17 +432,42 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
         cout << "---------------------------------------------------" << endl;
 
         // Vidurkio skaiciavimas
-        double vid = vidurkis(A.paz);
-        A.rez = galutinisBalas(vid, A.egz);
-
-        // Medianos skaiciavimas
-        double med = mediana(A.paz);
-        A.med = galutinisBalas(med, A.egz);
+        if (!A.paz.empty()) {
+            double vid = vidurkis(A.paz);
+            A.rez = galutinisBalas(vid, A.egz);
+            // Medianos skaiciavimas
+            double med = mediana(A.paz);
+            A.med = galutinisBalas(med, A.egz);
+        }
+        else {
+            A.rez = A.egz * 0.6;
+            A.med = A.egz * 0.6;
+        }
 
         grupe.push_back(A);
-        A.paz.clear();
-    }
 
+        // Klausimas ar testi
+        char atsakymas;
+        bool atsakymasTeisingas = false;
+        while (!atsakymasTeisingas) {
+            cout << "Ar norite generuoti dar viena studenta? (T/N): ";
+            cin >> atsakymas;
+            if (atsakymas == 'T' || atsakymas == 't') {
+                testiStudenta = true;
+                atsakymasTeisingas = true;
+                cout << "---------------------------------------------------" << endl;
+            }
+            else if (atsakymas == 'N' || atsakymas == 'n') {
+                testiStudenta = false;
+                atsakymasTeisingas = true;
+            }
+            else {
+                cout << "Klaida! Iveskite T arba N!" << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+        }
+    }
 }
 
 void skaitytiIsFailo(vector<Studentas>& grupe) {
@@ -547,5 +586,95 @@ void outputas(vector<Studentas>& grupe) {
     auto pabaiga = high_resolution_clock::now();
     duration<double> trukme = pabaiga - pradzia;
     cout << "---------------------------------------------------" << endl;
+    cout << "Ivykdymo laikas: " << fixed << setprecision(7) << trukme.count() << " s" << endl;
+}
+
+void rasytIFaila(vector<Studentas>& grupe) {
+    if (grupe.empty()) {
+        cout << "Nera studentu duomenu!" << endl;
+        return;
+    }
+
+    // Klausiame kaip rusiuoti
+    cout << "---------------------------------------------------" << endl;
+    cout << "Pasirinkite rusiavimo buda:" << endl;
+    cout << "1. Pagal varda (A-Z)" << endl;
+    cout << "2. Pagal pavarde (A-Z)" << endl;
+    cout << "3. Pagal galutini bala (vidurki) - didejimo tvarka" << endl;
+    cout << "4. Pagal galutini bala (mediana) - didejimo tvarka" << endl;
+
+    int pasirinkimas;
+    while (!(cin >> pasirinkimas) || pasirinkimas < 1 || pasirinkimas > 4) {
+        cout << "Klaida! Iveskite skaiciu nuo 1 iki 4: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+
+    cout << "Pasirinktas rusiavimas: " << pasirinkimas << endl;
+
+    // Pradedam rusiavimo laiko matavima
+    auto pradzia = high_resolution_clock::now();
+
+    // Rusiuojame pagal pasirinkima
+    switch (pasirinkimas) {
+    case 1:
+        sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
+            return a.vardas < b.vardas;
+        });
+        break;
+    case 2:
+        sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
+            return a.pavarde < b.pavarde;
+        });
+        break;
+    case 3:
+        sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
+            return a.rez < b.rez;
+        });
+        break;
+    case 4:
+        sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
+            return a.med < b.med;
+        });
+        break;
+    default:
+        cout << "Klaida! Neteisingas pasirinkimas. Rodoma be rusiavimo." << endl;
+        break;
+    }
+
+    // Klausiame failo pavadinimo
+    string isvestiesFailas;
+    cout << "---------------------------------------------------" << endl;
+    cout << "Iveskite isvesties failo pavadinima: ";
+    cin >> isvestiesFailas;
+
+    // Sukuriame kelią į Studentai_test katalogą
+    string kelias = "..\\Studentai_test\\" + isvestiesFailas;
+
+    std::ofstream failas(kelias);
+    if (!failas.is_open()) {
+        cout << "Klaida! Nepavyko sukurti failo: " << kelias << endl;
+        return;
+    }
+
+    // Antrastes eilute
+    failas << left << setw(20) << "Vardas" << setw(20) << "Pavarde"
+        << setw(20) << "Galutinis (Vid.)" << setw(20) << "Galutinis (Med.)" << endl;
+    failas << string(80, '-') << endl;
+
+    // Studentu duomenys
+    for (const auto& A : grupe) {
+        failas << left << setw(20) << A.vardas << setw(20) << A.pavarde
+            << setw(20) << fixed << setprecision(2) << A.rez
+            << setw(20) << fixed << setprecision(2) << A.med << endl;
+    }
+
+    failas.close();
+
+    // Baigiamas rusiavimo ir rasymo laiko matavimas
+    auto pabaiga = high_resolution_clock::now();
+    duration<double> trukme = pabaiga - pradzia;
+    cout << "---------------------------------------------------" << endl;
+    cout << "Duomenys sekmingai irasyti i faila: " << kelias << endl;
     cout << "Ivykdymo laikas: " << fixed << setprecision(7) << trukme.count() << " s" << endl;
 }

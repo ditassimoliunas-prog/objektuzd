@@ -1,3 +1,5 @@
+Terminale
+-------------------------------------------------------------------
 Studentai10000.txt
 -------------------------------------------------------------------
 1. Pagal varda (A-Z) - 15.4240438 s;
@@ -12,3 +14,24 @@ Studentai100000.txt
 2. 2. Pagal pavarde (A-Z) - 159.7389968 s;
 3. Pagal galutini bala (vidurki) - didejimo tvarka - 139.6520874 s;
 4. Pagal galutini bala (mediana) - didejimo tvarka - 134.9797619 s.
+
+
+
+Irasant i Faila
+-------------------------------------------------------------------
+Studentai10000.txt
+-------------------------------------------------------------------
+1. Pagal varda (A-Z) - 20.2906360 s;
+2. Pagal pavarde (A-Z) - 14.7894209 s;
+3. Pagal galutini bala (vidurki) - didejimo tvarka - 10.1576765 s;
+4. Pagal galutini bala (mediana) - didejimo tvarka - 11.6898651 s.
+
+
+Studentai100000.txt
+-------------------------------------------------------------------
+1. Pagal varda (A-Z) - 25.6486751 s;
+2. 2. Pagal pavarde (A-Z) - 12.7789037 s;
+3. Pagal galutini bala (vidurki) - didejimo tvarka - 11.8105468 s;
+4. Pagal galutini bala (mediana) - didejimo tvarka - 14.7559389 s.
+
+
