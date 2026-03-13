@@ -64,6 +64,7 @@ void generuotiPaz(vector<Studentas>& grupe) {
 
         // Automatiskai generuojamas atsitiktinis pazymiu kiekis (3-10)
         int n = rand() % 8 + 3;
+        A.paz.reserve(n); // Atminties rezervacija pazymiams
 
         // Automatiskai generuojami pazymiai
         cout << "Sugeneruota " << n << " pazymiu: ";
@@ -178,6 +179,7 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
 
         // Automatiskai generuojamas atsitiktinis pazymiu kiekis (3-10)
         int n = rand() % 8 + 3;
+        A.paz.reserve(n); // Atminties rezervacija pazymiams
 
         // Automatiskai sugeneruojami pazymiai
         cout << "Sugeneruota " << n << " pazymiu: ";
@@ -264,6 +266,7 @@ void skaitytiIsFailo(vector<Studentas>& grupe) {
             failas >> A.pavarde;
 
             vector<int> paz;
+            paz.reserve(15); // Rezervuojame talpą (~15 pažymių dažniausiai pakanka)
             int sk;
             while (failas >> sk) {
                 paz.push_back(sk);

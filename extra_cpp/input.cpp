@@ -34,6 +34,7 @@ void inputas(vector<Studentas>& grupe) {
 
         cout << "---------------------------------------------------" << endl;
         cout << "Iveskite semestro ivertinimus (0-10). Iveskite -1 kad baigtumete: " << endl;
+        A.paz.reserve(15); // Rezervuojame vietą pažymiams (sumažina atminties reallokacijas)
         int temp;
         while (true) {
             cout << "Iveskite pazymi (arba -1 kad baigtumete): ";
