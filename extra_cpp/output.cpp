@@ -13,7 +13,6 @@ using std::vector;
 using std::left;
 using std::right;
 using std::setw;
-using std::endl;
 using std::setprecision;
 using std::sort;
 using std::fixed;
@@ -24,17 +23,17 @@ using std::chrono::duration;
 
 void outputas(vector<Studentas>& grupe) {
     if (grupe.empty()) {
-        cout << "Nera studentu duomenu!" << endl;
+        cout << "Nera studentu duomenu!\n";
         return;
     }
 
     // Klausiame kaip rusiuoti
-    cout << "---------------------------------------------------" << endl;
-    cout << "Pasirinkite rusiavimo buda:" << endl;
-    cout << "1. Pagal varda (A-Z)" << endl;
-    cout << "2. Pagal pavarde (A-Z)" << endl;
-    cout << "3. Pagal galutini bala (vidurki) - didejimo tvarka" << endl;
-    cout << "4. Pagal galutini bala (mediana) - didejimo tvarka" << endl;
+    cout << "---------------------------------------------------\n";
+    cout << "Pasirinkite rusiavimo buda:\n";
+    cout << "1. Pagal varda (A-Z)\n";
+    cout << "2. Pagal pavarde (A-Z)\n";
+    cout << "3. Pagal galutini bala (vidurki) - didejimo tvarka\n";
+    cout << "4. Pagal galutini bala (mediana) - didejimo tvarka\n";
 
     int pasirinkimas;
     while (!(cin >> pasirinkimas) || pasirinkimas < 1 || pasirinkimas > 4) {
@@ -43,7 +42,7 @@ void outputas(vector<Studentas>& grupe) {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 
-    cout << "Pasirinktas rusiavimas: " << pasirinkimas << endl;
+    cout << "Pasirinktas rusiavimas: " << pasirinkimas << "\n";
 
     // Pradedamas rusiavimo laiko matavimas
     auto pradzia = high_resolution_clock::now();
@@ -71,7 +70,7 @@ void outputas(vector<Studentas>& grupe) {
             });
         break;
     default:
-        cout << "Klaida! Neteisingas pasirinkimas. Rodoma be rusiavimo." << endl;
+        cout << "Klaida! Neteisingas pasirinkimas. Rodoma be rusiavimo.\n";
         break;
     }
 
@@ -80,17 +79,17 @@ void outputas(vector<Studentas>& grupe) {
     duration<double> trukme = pabaiga - pradzia;
 
     // Antrastes eilute
-    cout << "---------------------------------------------------" << endl;
+    cout << "---------------------------------------------------\n";
     cout << left << setw(20) << "Vardas" << setw(20) << "Pavarde"
-        << setw(20) << "Galutinis (Vid.)" << setw(20) << "Galutinis (Med.)" << endl;
+        << setw(20) << "Galutinis (Vid.)" << setw(20) << "Galutinis (Med.)\n";
 
     // Studentu duomenys
     for (const auto& A : grupe) {
         cout << left << setw(20) << A.vardas << setw(20) << A.pavarde
             << setw(20) << fixed << setprecision(2) << A.rez
-            << setw(20) << fixed << setprecision(2) << A.med << endl;
+            << setw(20) << fixed << setprecision(2) << A.med << "\n";
     }
 
-    cout << "---------------------------------------------------" << endl;
-    cout << "Ivykdymo laikas: " << fixed << setprecision(7) << trukme.count() << " s" << endl;
+    cout << "---------------------------------------------------\n";
+    cout << "Ivykdymo laikas: " << fixed << setprecision(7) << trukme.count() << " s\n";
 }
