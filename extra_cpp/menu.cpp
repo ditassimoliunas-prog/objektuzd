@@ -8,6 +8,7 @@
 #include "../header_files/input.h"
 #include "../header_files/output.h"
 #include "../header_files/duomenu_valdymas.h"
+#include "../header_files/testavimas.h"
 
 using std::cout;
 using std::cin;
@@ -30,7 +31,9 @@ void menu() {
         cout << "2. Generuoti tik pazymius " << endl;
         cout << "3. Generuoti studentu vardus, pavardes ir pazymius " << endl;
         cout << "4. Nuskaityti duomenis is failo " << endl;
-        cout << "5. Baigti darba " << endl;
+        cout << "5. V0.4 SUKURTI TESTAVIMO FAILUS (1k - 10 000k irasu)" << endl;
+        cout << "6. V0.4 ATLIKTI SPARTOS ANALIZE (nuskaitymas, rusiavimas, dalijimas, isvedimas)" << endl;
+        cout << "7. Baigti darba " << endl;
 
         try {
             if (!(cin >> pas)) {
@@ -94,13 +97,31 @@ void menu() {
             }
             break;
         case 5:
+            try {
+                cout << "5. Testavimo failu kurimas " << endl;
+                sukurtiTestavimoFailus();
+            }
+            catch (const exception& e) {
+                cout << "Klaida vykdant generavima: " << e.what() << endl;
+            }
+            break;
+        case 6:
+            try {
+                cout << "6. Spartos analizes vykdymas " << endl;
+                atliktiSpartosAnalize();
+            }
+            catch (const exception& e) {
+                cout << "Klaida vykdant spartos analize: " << e.what() << endl;
+            }
+            break;
+        case 7:
             cout << "Programa uzdaroma " << endl;
             testi = false;
             break;
 
-            // Isvestus ivedus netinkama pasirinkima
+        // Isvestus ivedus netinkama pasirinkima
         default:
-            cout << "Klaida! Pasirinkite skaiciu nuo 1 iki 5 " << endl;
+            cout << "Klaida! Pasirinkite skaiciu nuo 1 iki 7 " << endl;
             cin.clear();
             cin.ignore(1000, '\n');
             break;
