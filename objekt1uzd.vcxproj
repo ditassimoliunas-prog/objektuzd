@@ -133,6 +133,7 @@
 	<ClCompile Include="extra_cpp\output.cpp" />
 	<ClCompile Include="extra_cpp\duomenu_valdymas.cpp" />
 	<ClCompile Include="extra_cpp\menu.cpp" />
+	<ClCompile Include="extra_cpp\testavimas.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
