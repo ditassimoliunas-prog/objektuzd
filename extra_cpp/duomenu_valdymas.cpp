@@ -247,7 +247,7 @@ void skaitytiIsFailo(vector<Studentas>& grupe) {
         cin >> failoPavadinimas;
 
         // Pridedamas testuojamas katalogas
-        string kelias = "..\\Studentai_test\\" + failoPavadinimas;
+        string kelias = "..\\studentai_test\\" + failoPavadinimas;
 
         ifstream failas(kelias);
         if (!failas.is_open()) {
@@ -383,7 +383,7 @@ void rasytIFaila(vector<Studentas>& grupe) {
     cin >> isvestiesFailas;
 
     // Sukuriamas kelias i testuojama kataloga
-    string kelias = "..\\Studentai_test\\" + isvestiesFailas;
+    string kelias = "..\\studentai_test\\" + isvestiesFailas;
 
     ofstream failas(kelias);
     if (!failas.is_open()) {
