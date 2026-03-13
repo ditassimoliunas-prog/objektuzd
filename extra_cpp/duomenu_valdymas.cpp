@@ -59,7 +59,7 @@ void generuotiPaz(vector<Studentas>& grupe) {
             }
         }
 
-        cout << "---------------------------------------------------\n";
+        cout << string(80, '-') << "\n";
 
         // Automatiskai generuojamas atsitiktinis pazymiu kiekis (3-10)
         int n = rand() % 8 + 3;
@@ -77,7 +77,7 @@ void generuotiPaz(vector<Studentas>& grupe) {
         // Automatiskai generuojamas egzaminas
         A.egz = generuotiEgzamina();
         cout << "Egzamino ivertinimas: " << A.egz << "\n";
-        cout << "---------------------------------------------------\n";
+        cout << string(80, '-') << "\n";
 
         // Vidurkio skaiciavimas
         if (!A.paz.empty()) {
@@ -103,7 +103,7 @@ void generuotiPaz(vector<Studentas>& grupe) {
             if (atsakymas == 'T' || atsakymas == 't') {
                 testiStudenta = true;
                 atsakymasTeisingas = true;
-                cout << "---------------------------------------------------\n";
+                cout << string(80, '-') << "\n";
             }
             else if (atsakymas == 'N' || atsakymas == 'n') {
                 testiStudenta = false;
@@ -174,7 +174,7 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
         }
 
         cout << "Sugeneruotas vardas ir pavarde: " << A.vardas << " " << A.pavarde << "\n";
-        cout << "---------------------------------------------------\n";
+        cout << string(80, '-') << "\n";
 
         // Automatiskai generuojamas atsitiktinis pazymiu kiekis (3-10)
         int n = rand() % 8 + 3;
@@ -192,7 +192,7 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
         // Automatiskai sugeneruojamas egzaminas
         A.egz = generuotiEgzamina();
         cout << "Egzamino ivertinimas: " << A.egz << "\n";
-        cout << "---------------------------------------------------\n";
+        cout << string(80, '-') << "\n";
 
         // Vidurkio skaiciavimas
         if (!A.paz.empty()) {
@@ -218,7 +218,7 @@ void generuotiVardIrPav(vector<Studentas>& grupe) {
             if (atsakymas == 'T' || atsakymas == 't') {
                 testiStudenta = true;
                 atsakymasTeisingas = true;
-                cout << "---------------------------------------------------\n";
+                cout << string(80, '-') << "\n";
             }
             else if (atsakymas == 'N' || atsakymas == 'n') {
                 testiStudenta = false;
@@ -293,7 +293,7 @@ void skaitytiIsFailo(vector<Studentas>& grupe) {
 
         // Klausiama kur isvesti rezultatus
         if (!grupe.empty()) {
-            cout << "---------------------------------------------------\n";
+            cout << string(80, '-') << "\n";
             cout << "Pasirinkite isvesties buda:\n";
             cout << "1. Isvesti i terminala\n";
             cout << "2. Irasyti i faila\n";
@@ -326,7 +326,7 @@ void rasytIFaila(vector<Studentas>& grupe) {
     }
 
     // Klausiama kaip rusiuoti
-    cout << "---------------------------------------------------\n";
+    cout << string(80, '-') << "\n";
     cout << "Pasirinkite rusiavimo buda:\n";
     cout << "1. Pagal varda (A-Z)\n";
     cout << "2. Pagal pavarde (A-Z)\n";
@@ -378,7 +378,7 @@ void rasytIFaila(vector<Studentas>& grupe) {
 
     // Klausiama failo pavadinimo
     string isvestiesFailas;
-    cout << "---------------------------------------------------\n";
+    cout << string(80, '-') << "\n";
     cout << "Iveskite isvesties failo pavadinima: ";
     cin >> isvestiesFailas;
 
@@ -405,7 +405,7 @@ void rasytIFaila(vector<Studentas>& grupe) {
 
     failas.close();
 
-    cout << "---------------------------------------------------\n";
+    cout << string(80, '-') << "\n";
     cout << "Duomenys sekmingai irasyti i faila: " << kelias << "\n";
     cout << "Ivykdymo laikas: " << fixed << setprecision(7) << trukme.count() << " s\n";
 }

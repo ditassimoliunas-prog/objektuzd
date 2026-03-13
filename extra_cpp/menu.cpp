@@ -23,9 +23,9 @@ void menu() {
     bool testi = true;
 
     while (testi) {
-        cout << "---------------------------------------------------\n";
+        cout << string(80, '-') << "\n";
         cout << "Studentu Rezultatu skaiciavimo aplikacija\n";
-        cout << "---------------------------------------------------\n";
+        cout << string(80, '-') << "\n";
         cout << "1. Ivesti duomenis ranka \n";
         cout << "2. Generuoti tik pazymius \n";
         cout << "3. Generuoti studentu vardus, pavardes ir pazymius \n";

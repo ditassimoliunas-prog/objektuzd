@@ -28,7 +28,7 @@ void outputas(vector<Studentas>& grupe) {
     }
 
     // Klausiame kaip rusiuoti
-    cout << "---------------------------------------------------\n";
+    cout << string(80, '-') << "\n";
     cout << "Pasirinkite rusiavimo buda:\n";
     cout << "1. Pagal varda (A-Z)\n";
     cout << "2. Pagal pavarde (A-Z)\n";
@@ -79,7 +79,7 @@ void outputas(vector<Studentas>& grupe) {
     duration<double> trukme = pabaiga - pradzia;
 
     // Antrastes eilute
-    cout << "---------------------------------------------------\n";
+    cout << string(80, '-') << "\n";
     cout << left << setw(20) << "Vardas" << setw(20) << "Pavarde"
         << setw(20) << "Galutinis (Vid.)" << setw(20) << "Galutinis (Med.)\n";
 
@@ -90,6 +90,6 @@ void outputas(vector<Studentas>& grupe) {
             << setw(20) << fixed << setprecision(2) << A.med << "\n";
     }
 
-    cout << "---------------------------------------------------\n";
+    cout << string(80, '-') << "\n";
     cout << "Ivykdymo laikas: " << fixed << setprecision(7) << trukme.count() << " s\n";
 }

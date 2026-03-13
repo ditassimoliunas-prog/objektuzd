@@ -31,7 +31,7 @@ void inputas(vector<Studentas>& grupe) {
             }
         }
 
-        cout << "---------------------------------------------------\n";
+        cout << string(80, '-') << "\n";
         cout << "Iveskite semestro ivertinimus (0-10). Iveskite -1 kad baigtumete: \n";
         A.paz.reserve(15); // Rezervuojama vieta pazymiams (sumazina atminties reallokacijas)
         int temp;
@@ -53,7 +53,7 @@ void inputas(vector<Studentas>& grupe) {
             }
         }
 
-        cout << "---------------------------------------------------\n";
+        cout << string(80, '-') << "\n";
 
         bool egzaminasTeisingas = false;
         while (!egzaminasTeisingas) {
@@ -70,7 +70,7 @@ void inputas(vector<Studentas>& grupe) {
                 egzaminasTeisingas = true;
             }
         }
-        cout << "---------------------------------------------------\n";
+        cout << string(80, '-') << "\n";
 
         // Vidurkio skaiciavimas
         if (!A.paz.empty()) {
@@ -97,7 +97,7 @@ void inputas(vector<Studentas>& grupe) {
             if (atsakymas == 'T' || atsakymas == 't') {
                 testiStudenta = true;
                 atsakymasTeisingas = true;
-                cout << "---------------------------------------------------\n";
+                cout << string(80, '-') << "\n";
             }
             else if (atsakymas == 'N' || atsakymas == 'n') {
                 testiStudenta = false;
