@@ -34,7 +34,7 @@ void inputas(vector<Studentas>& grupe) {
 
         cout << "---------------------------------------------------" << endl;
         cout << "Iveskite semestro ivertinimus (0-10). Iveskite -1 kad baigtumete: " << endl;
-        A.paz.reserve(15); // Rezervuojame vietą pažymiams (sumažina atminties reallokacijas)
+        A.paz.reserve(15); // Rezervuojama vieta pazymiams (sumazina atminties reallokacijas)
         int temp;
         while (true) {
             cout << "Iveskite pazymi (arba -1 kad baigtumete): ";
@@ -89,7 +89,7 @@ void inputas(vector<Studentas>& grupe) {
         grupe.push_back(A);
         A.paz.clear();
 
-        // Klausimas ar testi
+        // Klausimas ar testi rankini generavima
         char atsakymas;
         bool atsakymasTeisingas = false;
         while (!atsakymasTeisingas) {

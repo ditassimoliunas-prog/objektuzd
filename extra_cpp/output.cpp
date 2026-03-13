@@ -45,10 +45,10 @@ void outputas(vector<Studentas>& grupe) {
 
     cout << "Pasirinktas rusiavimas: " << pasirinkimas << endl;
 
-    // Pradedam rusiavimo laiko matavima
+    // Pradedamas rusiavimo laiko matavimas
     auto pradzia = high_resolution_clock::now();
 
-    // Rusiuojame pagal pasirinkima
+    // Rusiuojama pagal pasirinkima
     switch (pasirinkimas) {
     case 1:
         sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {

@@ -20,7 +20,7 @@ using std::exception;
 
 void menu() {
     vector<Studentas>grupe;
-    int pas; // pasirinkimas
+    int pas; // Pasirinkimas
     bool testi = true;
 
     while (testi) {
@@ -47,7 +47,7 @@ void menu() {
             continue;
         }
 
-        // Pasirinkimo isvestys
+        // Pasirinkimo isvestis
         switch (pas) {
         case 1:
             try {
@@ -119,7 +119,7 @@ void menu() {
             testi = false;
             break;
 
-        // Isvestus ivedus netinkama pasirinkima
+        // Isvestis ivedus netinkama pasirinkima
         default:
             cout << "Klaida! Pasirinkite skaiciu nuo 1 iki 7 " << endl;
             cin.clear();

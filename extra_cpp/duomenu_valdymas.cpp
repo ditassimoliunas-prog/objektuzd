@@ -37,7 +37,7 @@ using std::exception;
 
 
 
-// Atsitiktiniiu skaiciu generavimas
+// Atsitiktiniu skaiciu generavimas
 void generuotiPaz(vector<Studentas>& grupe) {
     srand(time(0));
 
@@ -247,7 +247,7 @@ void skaitytiIsFailo(vector<Studentas>& grupe) {
         cout << "Iveskite failo pavadinima: ";
         cin >> failoPavadinimas;
 
-        // Pridedame Studentai_test kataloga
+        // Pridedamas testuojamas katalogas
         string kelias = "..\\Studentai_test\\" + failoPavadinimas;
 
         ifstream failas(kelias);
@@ -255,18 +255,18 @@ void skaitytiIsFailo(vector<Studentas>& grupe) {
             throw runtime_error("Nepavyko atidaryti failo: " + kelias);
         }
 
-        // Praleisti antraste
+        // Praleidziama antraste
         string eilute;
         getline(failas, eilute);
 
-        // Skaityti studentus
+        // Skaitomi studentai
         while (failas >> eilute) {
             Studentas A;
             A.vardas = eilute;
             failas >> A.pavarde;
 
             vector<int> paz;
-            paz.reserve(15); // Rezervuojame talpą (~15 pažymių dažniausiai pakanka)
+            paz.reserve(15); // Rezervuojama talpa (~15 pazymiu dazniausiai pakanka)
             int sk;
             while (failas >> sk) {
                 paz.push_back(sk);
@@ -292,7 +292,7 @@ void skaitytiIsFailo(vector<Studentas>& grupe) {
 
         cout << "Nuskaityta " << grupe.size() << " studentu!" << endl;
 
-        // Klausiame kur isvesti rezultatus
+        // Klausiama kur isvesti rezultatus
         if (!grupe.empty()) {
             cout << "---------------------------------------------------" << endl;
             cout << "Pasirinkite isvesties buda:" << endl;
@@ -326,7 +326,7 @@ void rasytIFaila(vector<Studentas>& grupe) {
         return;
     }
 
-    // Klausiame kaip rusiuoti
+    // Klausiama kaip rusiuoti
     cout << "---------------------------------------------------" << endl;
     cout << "Pasirinkite rusiavimo buda:" << endl;
     cout << "1. Pagal varda (A-Z)" << endl;
@@ -343,10 +343,10 @@ void rasytIFaila(vector<Studentas>& grupe) {
 
     cout << "Pasirinktas rusiavimas: " << pasirinkimas << endl;
 
-    // Pradedam rusiavimo laiko matavima
+    // Pradedamas rusiavimo laiko matavimas
     auto pradzia = high_resolution_clock::now();
 
-    // Rusiuojame pagal pasirinkima
+    // Rusiuojama pagal pasirinkima
     switch (pasirinkimas) {
     case 1:
         sort(grupe.begin(), grupe.end(), [](const Studentas& a, const Studentas& b) {
@@ -377,13 +377,13 @@ void rasytIFaila(vector<Studentas>& grupe) {
     auto pabaiga = high_resolution_clock::now();
     duration<double> trukme = pabaiga - pradzia;
 
-    // Klausiame failo pavadinimo
+    // Klausiama failo pavadinimo
     string isvestiesFailas;
     cout << "---------------------------------------------------" << endl;
     cout << "Iveskite isvesties failo pavadinima: ";
     cin >> isvestiesFailas;
 
-    // Sukuriame kelią į Studentai_test katalogą
+    // Sukuriamas kelias i testuojama kataloga
     string kelias = "..\\Studentai_test\\" + isvestiesFailas;
 
     ofstream failas(kelias);
