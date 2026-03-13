@@ -31,8 +31,8 @@ void menu() {
         cout << "2. Generuoti tik pazymius " << endl;
         cout << "3. Generuoti studentu vardus, pavardes ir pazymius " << endl;
         cout << "4. Nuskaityti duomenis is failo " << endl;
-        cout << "5. V0.4 SUKURTI TESTAVIMO FAILUS (1k - 10 000k irasu)" << endl;
-        cout << "6. V0.4 ATLIKTI SPARTOS ANALIZE (nuskaitymas, rusiavimas, dalijimas, isvedimas)" << endl;
+        cout << "5. Sukurti testavimo failus (1k - 10 000k irasu)" << endl;
+        cout << "6. Atlikti spartos analize (nuskaitymas, rusiavimas, dalijimas, isvedimas)" << endl;
         cout << "7. Baigti darba " << endl;
 
         try {
