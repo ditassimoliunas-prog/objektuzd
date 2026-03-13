@@ -370,6 +370,10 @@ void rasytIFaila(vector<Studentas>& grupe) {
         break;
     }
 
+    // Baigiamas rusiavimo laiko matavimas
+    auto pabaiga = high_resolution_clock::now();
+    duration<double> trukme = pabaiga - pradzia;
+
     // Klausiame failo pavadinimo
     string isvestiesFailas;
     cout << "---------------------------------------------------" << endl;
@@ -399,9 +403,6 @@ void rasytIFaila(vector<Studentas>& grupe) {
 
     failas.close();
 
-    // Baigiamas rusiavimo ir rasymo laiko matavimas
-    auto pabaiga = high_resolution_clock::now();
-    duration<double> trukme = pabaiga - pradzia;
     cout << "---------------------------------------------------" << endl;
     cout << "Duomenys sekmingai irasyti i faila: " << kelias << endl;
     cout << "Ivykdymo laikas: " << fixed << setprecision(7) << trukme.count() << " s" << endl;

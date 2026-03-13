@@ -75,6 +75,10 @@ void outputas(vector<Studentas>& grupe) {
         break;
     }
 
+    // Baigiamas rusiavimo laiko matavimas
+    auto pabaiga = high_resolution_clock::now();
+    duration<double> trukme = pabaiga - pradzia;
+
     // Antrastes eilute
     cout << "---------------------------------------------------" << endl;
     cout << left << setw(20) << "Vardas" << setw(20) << "Pavarde"
@@ -87,9 +91,6 @@ void outputas(vector<Studentas>& grupe) {
             << setw(20) << fixed << setprecision(2) << A.med << endl;
     }
 
-    // Baigiamas rusiavimo laiko matavimas
-    auto pabaiga = high_resolution_clock::now();
-    duration<double> trukme = pabaiga - pradzia;
     cout << "---------------------------------------------------" << endl;
     cout << "Ivykdymo laikas: " << fixed << setprecision(7) << trukme.count() << " s" << endl;
 }
