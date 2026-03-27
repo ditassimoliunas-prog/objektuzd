@@ -5,7 +5,7 @@
 
 using std::sort;
 
-// Funkcija patikrinti ar vardas/pavarde turi tik raides
+// Funkcija patikrinti ar vardas/pavarde turi tik raides, neleidzia jokiu simboliu
 bool arTikRaides(const string& str) {
     if (str.empty()) return false;
     for (char c : str) {
