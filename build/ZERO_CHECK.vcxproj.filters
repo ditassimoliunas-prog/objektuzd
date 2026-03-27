@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\ditas\source\repos\objektuzd\objektuzd\build\CMakeFiles\d2ea5b0d6fb3023e988e9d2cf8fc69a1\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E4D5518E-CC7F-39F5-8D95-34F282B302D1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

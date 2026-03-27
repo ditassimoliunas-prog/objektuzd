@@ -7,8 +7,12 @@ project(ObjektinisUzdavinys)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Nustatome perspėjimus, kad matytumėte galimas klaidas kompiliavimo metu
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O3")
+# Nustatome perspėjimus pagal naudojamą kompiliatorių
+if(MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3")
+else()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -O3")
+endif()
 
 # Nurodome kur ieškoti header failų (.h)
 include_directories(header_files)

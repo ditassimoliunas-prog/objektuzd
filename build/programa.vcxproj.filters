@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\ditas\source\repos\objektuzd\objektuzd\objekt1uzd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ditas\source\repos\objektuzd\objektuzd\extra_cpp\duomenu_valdymas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ditas\source\repos\objektuzd\objektuzd\extra_cpp\input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ditas\source\repos\objektuzd\objektuzd\extra_cpp\mat_funkcijos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ditas\source\repos\objektuzd\objektuzd\extra_cpp\menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ditas\source\repos\objektuzd\objektuzd\extra_cpp\output.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ditas\source\repos\objektuzd\objektuzd\extra_cpp\testavimas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\ditas\source\repos\objektuzd\objektuzd\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F8FE968C-B040-33B5-A5A3-D7A84D198140}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

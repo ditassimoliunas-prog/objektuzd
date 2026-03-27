@@ -1,0 +1,3 @@
+C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/programa.dir
+C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/ZERO_CHECK.dir
