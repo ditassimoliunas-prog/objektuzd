@@ -34,9 +34,11 @@ Programoje taip pat atlikta spartos analizė, matuojant kiek laiko užtrunka ski
 #### 1 Strategija (Du nauji konteineriai)
 | Įrašų skaičius | `std::vector` (sekundės) | `std::list` (sekundės) | `std::deque` (sekundės) |
 | ------------- | :--- | :--- | :--- |
-| **10 000**    | 0.00 | 0.00 | 0.00 |
-| **100 000**   | 0.00 | 0.00 | 0.00 |
-| **1 000 000** | 0.00 | 0.00 | 0.00 |
+| **1000**      | 0.00 | 0.00 | 0.00 |
+| **10000**     | 0.00 | 0.00 | 0.00 |
+| **100000**    | 0.00 | 0.00 | 0.00 |
+| **1000000**   | 0.00 | 0.00 | 0.00 |
+| **10000000**  | 0.00 | 0.00 | 0.00 |
 
 #### 2 Strategija (Vienas naujas konteineris, trynimas iš pagrindinio)
 | Įrašų skaičius | `std::vector` (sekundės) | `std::list` (sekundės) | `std::deque` (sekundės) |
@@ -48,9 +50,11 @@ Programoje taip pat atlikta spartos analizė, matuojant kiek laiko užtrunka ski
 #### 3 Strategija (Efektyviausi C++ algoritmai/dalijimas)
 | Įrašų skaičius | `std::vector` (sekundės) | `std::list` (sekundės) | `std::deque` (sekundės) |
 | ------------- | :--- | :--- | :--- |
-| **10 000**    | 0.00 | 0.00 | 0.00 |
-| **100 000**   | 0.00 | 0.00 | 0.00 |
-| **1 000 000** | 0.00 | 0.00 | 0.00 |
+| **1000**      | 0.00 | 0.00 | 0.00 |
+| **10000**     | 0.00 | 0.00 | 0.00 |
+| **100000**    | 0.00 | 0.00 | 0.00 |
+| **1000000**   | 0.00 | 0.00 | 0.00 |
+| **10000000**  | 0.00 | 0.00 | 0.00 |
 
 ### Strategijų Ataskaitos Apibendrinimas
 1. **Trynimas `std::vector` struktūroje yra neefektyvus.** Antrojoje strategijoje elementų šalinimas po vieną drastiškai sulėtina veikimą atsiradus dideliam elementų perstūmimo poreikiui (ypač matoma prie lėtėjimo skaičių 1 000 000).
