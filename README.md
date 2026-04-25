@@ -43,9 +43,11 @@ Programoje taip pat atlikta spartos analizė, matuojant kiek laiko užtrunka ski
 #### 2 Strategija (Vienas naujas konteineris, trynimas iš pagrindinio)
 | Įrašų skaičius | `std::vector` (sekundės) | `std::list` (sekundės) | `std::deque` (sekundės) |
 | ------------- | :--- | :--- | :--- |
-| **10 000**    | 0.00 | 0.00 | 0.00 |
-| **100 000**   | 0.00 | 0.00 | 0.00 |
-| **1 000 000** | *Laisvai įrašykite* | 0.00 | *Laisvai įrašykite* |
+| **1000**      | 0.00 | 0.00 | 0.00 |
+| **10000**     | 0.00 | 0.00 | 0.00 |
+| **100000**    | 0.00 | 0.00 | 0.00 |
+| **1000000**   | 0.00 | 0.00 | 0.00 |
+| **10000000**  | 0.00 | 0.00 | 0.00 |
 
 #### 3 Strategija (Efektyviausi C++ algoritmai/dalijimas)
 | Įrašų skaičius | `std::vector` (sekundės) | `std::list` (sekundės) | `std::deque` (sekundės) |
