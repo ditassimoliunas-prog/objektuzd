@@ -19,9 +19,9 @@ Programoje taip pat atlikta spartos analizė, matuojant kiek laiko užtrunka ski
 ## v1.0 veiki principas ir konteinerių/strategijų tyrimas
 
 **Testavimo Sistemos Parametrai:**
-- **CPU:** AMD Ryzen 5 5500
-- **RAM:** 32 GB DDR4 (3200 MHz)
-- **Fizinė atmintis:** M.2 SSD diskas
+- **CPU:** 12th Gen Intel(R) Core(TM) i7-1255U
+- **RAM:** 16 GB DDR4 (3200 MHz)
+- **Fizinė atmintis:** M.2 SSD diskas NVMe INTEL SSDPEKNU512GZ 512 GB, 3,500 MB/s nuoseklaus įrašymo greitis, 2,700 MB/s rašymo greitis
 
 ### Realizuotos dalijimo strategijos:
 1. **1 Strategija:** Pradinis naršomas konteineris išskaidomas sukuriant **du naujus konteinerius** (Vargšiukai ir Kietiakai) vieno iteravimo metu ir jį tiesiog išvalant.
@@ -29,7 +29,7 @@ Programoje taip pat atlikta spartos analizė, matuojant kiek laiko užtrunka ski
 3. **3 Strategija (Algoritmų biblioteka):** Taikomi patys efektyviausi C++ algoritmai. Vektoriams ir Deque naudojamas `std::stable_partition` algoritmas vietoje (in-place) iškeliant vargšiukus į konteinerio priekį per iteratorių išsaugojimą, o `std::list` atveju naudojami list medžių grandžių mainymų metodai (sąlyginis `partition` suskirstymas su `splice` iteratorių iškirpimu be fizinio duomenų kopijavimo).
 
 ### Tyrimo Rezultatai (Bendras padalijimo ir išvedimo laikas)
-*(Lentelėje matomi vidurkiai apibendrina išskaidymo į 2 grupes procesą su failų išvedimu po kelių iteracijų)*
+*(Lentelėje matomi vidurkiai apibendrina išskaidymo į 2 grupes procesą su failų išvedimu po 3 iteracijų)*
 
 #### 1 Strategija (Du nauji konteineriai)
 | Įrašų skaičius | `std::vector` (sekundės) | `std::list` (sekundės) | `std::deque` (sekundės) |
