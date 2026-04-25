@@ -33,12 +33,12 @@ Programoje taip pat atlikta spartos analizė, matuojant kiek laiko užtrunka ski
 
 #### 1 Strategija (Du nauji konteineriai)
 | Įrašų skaičius | `std::vector` (sekundės) | `std::list` (sekundės) | `std::deque` (sekundės) |
-| ------------- | :--- | :--- | :--- |
-| **1000**      | 0.00 | 0.00 | 0.00 |
-| **10000**     | 0.00 | 0.00 | 0.00 |
-| **100000**    | 0.00 | 0.00 | 0.00 |
-| **1000000**   | 0.00 | 0.00 | 0.00 |
-| **10000000**  | 0.00 | 0.00 | 0.00 |
+| ------------- | :---       | :---       | :---       |
+| **1000**      | 0.03144 s  | 0.02811 s  | 0.02933 s  |
+| **10000**     | 0.05953 s  | 0.06255 s  | 0.07063 s  |
+| **100000**    | 0.43069 s  | 0.50891 s  | 0.46287 s  |
+| **1000000**   | 5.26029 s  | 6.91305 s  | 4.72546 s  |
+| **10000000**  | 58.02285 s | 76.11192 s | 62.73043 s |
 
 #### 2 Strategija (Vienas naujas konteineris, trynimas iš pagrindinio)
 | Įrašų skaičius | `std::vector` (sekundės) | `std::list` (sekundės) | `std::deque` (sekundės) |
