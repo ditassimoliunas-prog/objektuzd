@@ -55,18 +55,23 @@ events:
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\PuTTY\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Users\\ditas\\.local\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Users\\ditas\\.cargo\\bin"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\"
         - "C:\\Users\\ditas\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ditas\\AppData\\Local\\GitHubDesktop\\bin"
         - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\ditas\\AppData\\Roaming\\npm"
+        - "C:\\MinGW\\bin"
+        - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
-        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -96,10 +101,10 @@ events:
       
       The output was:
       0
-      MSBuild version 18.4.0+6e61e96ac for .NET Framework
-      Build started 3/27/2026 9:20:24 PM.
+      MSBuild version 18.5.4+cb4e32d21 for .NET Framework
+      Build started 4/25/2026 7:21:40 PM.
       
-      Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
         Creating directory "Debug\\".
         Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
@@ -112,7 +117,7 @@ events:
         CMakeCCompilerId.c
       Link:
         C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
-        CompilerIdC.vcxproj -> C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.exe
+        CompilerIdC.vcxproj -> C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
         :VCEnd
@@ -120,13 +125,13 @@ events:
       FinalizeBuildStatus:
         Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
         Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
-      Done Building Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      Done Building Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
       
       Build succeeded.
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:01.19
+      Time Elapsed 00:00:00.73
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -134,7 +139,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
       
       The C compiler identification is MSVC, found in:
-        C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/4.2.3-msvc3/CompilerIdC/CompilerIdC.exe
+        C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/4.2.3-msvc3/CompilerIdC/CompilerIdC.exe
       
   -
     kind: "find-v1"
@@ -179,18 +184,23 @@ events:
       - "C:/Windows/System32/wbem/"
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/PuTTY/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
       - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Users/ditas/.local/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Users/ditas/.cargo/bin/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/ditas/AppData/Roaming/npm/"
+      - "C:/MinGW/bin/"
+      - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -220,18 +230,23 @@ events:
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\PuTTY\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Users\\ditas\\.local\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Users\\ditas\\.cargo\\bin"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\"
         - "C:\\Users\\ditas\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ditas\\AppData\\Local\\GitHubDesktop\\bin"
         - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\ditas\\AppData\\Roaming\\npm"
+        - "C:\\MinGW\\bin"
+        - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
-        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -279,18 +294,23 @@ events:
       - "C:/Windows/System32/wbem/"
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/PuTTY/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
       - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Users/ditas/.local/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Users/ditas/.cargo/bin/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/ditas/AppData/Roaming/npm/"
+      - "C:/MinGW/bin/"
+      - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -359,9 +379,15 @@ events:
       - "C:/Windows/System32/OpenSSH/lld-link.com"
       - "C:/Windows/System32/OpenSSH/lld-link.exe"
       - "C:/Windows/System32/OpenSSH/lld-link"
-      - "C:/Program Files/dotnet/lld-link.com"
-      - "C:/Program Files/dotnet/lld-link.exe"
-      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files/PuTTY/lld-link.com"
+      - "C:/Program Files/PuTTY/lld-link.exe"
+      - "C:/Program Files/PuTTY/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/lld-link.com"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/lld-link.exe"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/lld-link"
@@ -371,30 +397,39 @@ events:
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link"
-      - "C:/Program Files/Git/cmd/lld-link.com"
-      - "C:/Program Files/Git/cmd/lld-link.exe"
-      - "C:/Program Files/Git/cmd/lld-link"
-      - "C:/Program Files/nodejs/lld-link.com"
-      - "C:/Program Files/nodejs/lld-link.exe"
-      - "C:/Program Files/nodejs/lld-link"
-      - "C:/Users/ditas/.local/bin/lld-link.com"
-      - "C:/Users/ditas/.local/bin/lld-link.exe"
-      - "C:/Users/ditas/.local/bin/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Users/ditas/.cargo/bin/lld-link.com"
+      - "C:/Users/ditas/.cargo/bin/lld-link.exe"
+      - "C:/Users/ditas/.cargo/bin/lld-link"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/lld-link.com"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/lld-link.exe"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/lld-link"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/lld-link.com"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/lld-link.exe"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/lld-link"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/lld-link.com"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/lld-link"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
       - "C:/Users/ditas/AppData/Roaming/npm/lld-link.com"
       - "C:/Users/ditas/AppData/Roaming/npm/lld-link.exe"
       - "C:/Users/ditas/AppData/Roaming/npm/lld-link"
+      - "C:/MinGW/bin/lld-link.com"
+      - "C:/MinGW/bin/lld-link.exe"
+      - "C:/MinGW/bin/lld-link"
+      - "C:/msys64/usr/bin/lld-link.com"
+      - "C:/msys64/usr/bin/lld-link.exe"
+      - "C:/msys64/usr/bin/lld-link"
       - "C:/Users/ditas/.dotnet/tools/lld-link.com"
       - "C:/Users/ditas/.dotnet/tools/lld-link.exe"
       - "C:/Users/ditas/.dotnet/tools/lld-link"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/lld-link.com"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/lld-link.exe"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/lld-link"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.exe"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link"
@@ -430,18 +465,23 @@ events:
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\PuTTY\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Users\\ditas\\.local\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Users\\ditas\\.cargo\\bin"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\"
         - "C:\\Users\\ditas\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ditas\\AppData\\Local\\GitHubDesktop\\bin"
         - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\ditas\\AppData\\Roaming\\npm"
+        - "C:\\MinGW\\bin"
+        - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
-        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -487,18 +527,23 @@ events:
       - "C:/Windows/System32/wbem/"
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/PuTTY/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
       - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Users/ditas/.local/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Users/ditas/.cargo/bin/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/ditas/AppData/Roaming/npm/"
+      - "C:/MinGW/bin/"
+      - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -528,18 +573,23 @@ events:
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\PuTTY\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Users\\ditas\\.local\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Users\\ditas\\.cargo\\bin"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\"
         - "C:\\Users\\ditas\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ditas\\AppData\\Local\\GitHubDesktop\\bin"
         - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\ditas\\AppData\\Roaming\\npm"
+        - "C:\\MinGW\\bin"
+        - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
-        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -585,18 +635,23 @@ events:
       - "C:/Windows/System32/wbem/"
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/PuTTY/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
       - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Users/ditas/.local/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Users/ditas/.cargo/bin/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/ditas/AppData/Roaming/npm/"
+      - "C:/MinGW/bin/"
+      - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -656,18 +711,23 @@ events:
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\PuTTY\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Users\\ditas\\.local\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Users\\ditas\\.cargo\\bin"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\"
         - "C:\\Users\\ditas\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ditas\\AppData\\Local\\GitHubDesktop\\bin"
         - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\ditas\\AppData\\Roaming\\npm"
+        - "C:\\MinGW\\bin"
+        - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
-        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -713,18 +773,23 @@ events:
       - "C:/Windows/System32/wbem/"
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/PuTTY/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
       - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Users/ditas/.local/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Users/ditas/.cargo/bin/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/ditas/AppData/Roaming/npm/"
+      - "C:/MinGW/bin/"
+      - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -754,18 +819,23 @@ events:
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\PuTTY\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Users\\ditas\\.local\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Users\\ditas\\.cargo\\bin"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\"
         - "C:\\Users\\ditas\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ditas\\AppData\\Local\\GitHubDesktop\\bin"
         - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\ditas\\AppData\\Roaming\\npm"
+        - "C:\\MinGW\\bin"
+        - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
-        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -817,18 +887,23 @@ events:
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\PuTTY\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Users\\ditas\\.local\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Users\\ditas\\.cargo\\bin"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\"
         - "C:\\Users\\ditas\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ditas\\AppData\\Local\\GitHubDesktop\\bin"
         - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\ditas\\AppData\\Roaming\\npm"
+        - "C:\\MinGW\\bin"
+        - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
-        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -858,10 +933,10 @@ events:
       
       The output was:
       0
-      MSBuild version 18.4.0+6e61e96ac for .NET Framework
-      Build started 3/27/2026 9:20:26 PM.
+      MSBuild version 18.5.4+cb4e32d21 for .NET Framework
+      Build started 4/25/2026 7:21:42 PM.
       
-      Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
         Creating directory "Debug\\".
         Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
@@ -874,7 +949,7 @@ events:
         CMakeCXXCompilerId.cpp
       Link:
         C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-        CompilerIdCXX.vcxproj -> C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.exe
+        CompilerIdCXX.vcxproj -> C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
         :VCEnd
@@ -882,13 +957,13 @@ events:
       FinalizeBuildStatus:
         Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
         Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
-      Done Building Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      Done Building Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\4.2.3-msvc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
       
       Build succeeded.
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.69
+      Time Elapsed 00:00:00.61
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -896,7 +971,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/4.2.3-msvc3/CompilerIdCXX/CompilerIdCXX.exe
+        C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/4.2.3-msvc3/CompilerIdCXX/CompilerIdCXX.exe
       
   -
     kind: "find-v1"
@@ -941,18 +1016,23 @@ events:
       - "C:/Windows/System32/wbem/"
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/PuTTY/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
       - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Users/ditas/.local/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Users/ditas/.cargo/bin/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/ditas/AppData/Roaming/npm/"
+      - "C:/MinGW/bin/"
+      - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -1021,9 +1101,15 @@ events:
       - "C:/Windows/System32/OpenSSH/lld-link.com"
       - "C:/Windows/System32/OpenSSH/lld-link.exe"
       - "C:/Windows/System32/OpenSSH/lld-link"
-      - "C:/Program Files/dotnet/lld-link.com"
-      - "C:/Program Files/dotnet/lld-link.exe"
-      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files/PuTTY/lld-link.com"
+      - "C:/Program Files/PuTTY/lld-link.exe"
+      - "C:/Program Files/PuTTY/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/lld-link.com"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/lld-link.exe"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/lld-link"
@@ -1033,30 +1119,39 @@ events:
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.com"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link.exe"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/lld-link"
-      - "C:/Program Files/Git/cmd/lld-link.com"
-      - "C:/Program Files/Git/cmd/lld-link.exe"
-      - "C:/Program Files/Git/cmd/lld-link"
-      - "C:/Program Files/nodejs/lld-link.com"
-      - "C:/Program Files/nodejs/lld-link.exe"
-      - "C:/Program Files/nodejs/lld-link"
-      - "C:/Users/ditas/.local/bin/lld-link.com"
-      - "C:/Users/ditas/.local/bin/lld-link.exe"
-      - "C:/Users/ditas/.local/bin/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Users/ditas/.cargo/bin/lld-link.com"
+      - "C:/Users/ditas/.cargo/bin/lld-link.exe"
+      - "C:/Users/ditas/.cargo/bin/lld-link"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/lld-link.com"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/lld-link.exe"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/lld-link"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/lld-link.com"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/lld-link.exe"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/lld-link"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/lld-link.com"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/lld-link"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.com"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/lld-link.exe"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/lld-link"
       - "C:/Users/ditas/AppData/Roaming/npm/lld-link.com"
       - "C:/Users/ditas/AppData/Roaming/npm/lld-link.exe"
       - "C:/Users/ditas/AppData/Roaming/npm/lld-link"
+      - "C:/MinGW/bin/lld-link.com"
+      - "C:/MinGW/bin/lld-link.exe"
+      - "C:/MinGW/bin/lld-link"
+      - "C:/msys64/usr/bin/lld-link.com"
+      - "C:/msys64/usr/bin/lld-link.exe"
+      - "C:/msys64/usr/bin/lld-link"
       - "C:/Users/ditas/.dotnet/tools/lld-link.com"
       - "C:/Users/ditas/.dotnet/tools/lld-link.exe"
       - "C:/Users/ditas/.dotnet/tools/lld-link"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/lld-link.com"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/lld-link.exe"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/lld-link"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link.exe"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/lld-link"
@@ -1092,18 +1187,23 @@ events:
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\PuTTY\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Users\\ditas\\.local\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Users\\ditas\\.cargo\\bin"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\"
         - "C:\\Users\\ditas\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ditas\\AppData\\Local\\GitHubDesktop\\bin"
         - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\ditas\\AppData\\Roaming\\npm"
+        - "C:\\MinGW\\bin"
+        - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
-        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -1151,18 +1251,23 @@ events:
       - "C:/Windows/System32/wbem/"
       - "C:/Windows/System32/WindowsPowerShell/v1.0/"
       - "C:/Windows/System32/OpenSSH/"
-      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/PuTTY/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
       - "C:/Program Files/Microsoft SQL Server/170/Tools/Binn/"
       - "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/"
       - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
-      - "C:/Program Files/Git/cmd/"
-      - "C:/Program Files/nodejs/"
-      - "C:/Users/ditas/.local/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Users/ditas/.cargo/bin/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/ditas/AppData/Local/Programs/Python/Python314/"
       - "C:/Users/ditas/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ditas/AppData/Local/GitHubDesktop/bin/"
       - "C:/Users/ditas/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/ditas/AppData/Roaming/npm/"
+      - "C:/MinGW/bin/"
+      - "C:/msys64/usr/bin/"
       - "C:/Users/ditas/.dotnet/tools/"
-      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/PrivateAssemblies/runtimes/win-x64/native/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
@@ -1231,18 +1336,23 @@ events:
         - "C:\\WINDOWS\\System32\\Wbem"
         - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
         - "C:\\WINDOWS\\System32\\OpenSSH\\"
-        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\PuTTY\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
         - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
         - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
         - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
-        - "C:\\Program Files\\Git\\cmd"
-        - "C:\\Program Files\\nodejs\\"
-        - "C:\\Users\\ditas\\.local\\bin"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Users\\ditas\\.cargo\\bin"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Python\\Python314\\"
         - "C:\\Users\\ditas\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ditas\\AppData\\Local\\GitHubDesktop\\bin"
         - "C:\\Users\\ditas\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\ditas\\AppData\\Roaming\\npm"
+        - "C:\\MinGW\\bin"
+        - "C:\\msys64\\usr\\bin"
         - "C:\\Users\\ditas\\.dotnet\\tools"
-        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\PrivateAssemblies\\runtimes\\win-x64\\native"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
         - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
@@ -1262,8 +1372,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/CMakeScratch/TryCompile-gguxyd"
-      binary: "C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/CMakeScratch/TryCompile-gguxyd"
+      source: "C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-gg2nfn"
+      binary: "C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-gg2nfn"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -1272,39 +1382,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/CMakeScratch/TryCompile-gguxyd'
+        Change Dir: 'C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-gg2nfn'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_650bc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
-        MSBuild version 18.4.0+6e61e96ac for .NET Framework
-        Build started 3/27/2026 9:20:27 PM.
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_4538d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.5.4+cb4e32d21 for .NET Framework
+        Build started 4/25/2026 7:21:44 PM.
         
-        Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gguxyd\\cmTC_650bc.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gg2nfn\\cmTC_4538d.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gguxyd\\Debug\\".
-          Creating directory "cmTC_650bc.dir\\Debug\\cmTC_650bc.tlog\\".
+          Creating directory "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gg2nfn\\Debug\\".
+          Creating directory "cmTC_4538d.dir\\Debug\\cmTC_4538d.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_650bc.dir\\Debug\\cmTC_650bc.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_650bc.dir\\Debug\\cmTC_650bc.tlog\\unsuccessfulbuild".
+          Creating "cmTC_4538d.dir\\Debug\\cmTC_4538d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_4538d.dir\\Debug\\cmTC_4538d.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_650bc.dir\\Debug\\\\" /Fd"cmTC_650bc.dir\\Debug\\vc145.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35728 for x64
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_4538d.dir\\Debug\\\\" /Fd"cmTC_4538d.dir\\Debug\\vc145.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35729 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_650bc.dir\\Debug\\\\" /Fd"cmTC_650bc.dir\\Debug\\vc145.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_4538d.dir\\Debug\\\\" /Fd"cmTC_4538d.dir\\Debug\\vc145.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gguxyd\\Debug\\cmTC_650bc.exe" /INCREMENTAL /ILK:"cmTC_650bc.dir\\Debug\\cmTC_650bc.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/CMakeScratch/TryCompile-gguxyd/Debug/cmTC_650bc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/CMakeScratch/TryCompile-gguxyd/Debug/cmTC_650bc.lib" /MACHINE:X64  /machine:x64 cmTC_650bc.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_650bc.vcxproj -> C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gguxyd\\Debug\\cmTC_650bc.exe
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gg2nfn\\Debug\\cmTC_4538d.exe" /INCREMENTAL /ILK:"cmTC_4538d.dir\\Debug\\cmTC_4538d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-gg2nfn/Debug/cmTC_4538d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-gg2nfn/Debug/cmTC_4538d.lib" /MACHINE:X64  /machine:x64 cmTC_4538d.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_4538d.vcxproj -> C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gg2nfn\\Debug\\cmTC_4538d.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_650bc.dir\\Debug\\cmTC_650bc.tlog\\unsuccessfulbuild".
-          Touching "cmTC_650bc.dir\\Debug\\cmTC_650bc.tlog\\cmTC_650bc.lastbuildstate".
-        Done Building Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gguxyd\\cmTC_650bc.vcxproj" (default targets).
+          Deleting file "cmTC_4538d.dir\\Debug\\cmTC_4538d.tlog\\unsuccessfulbuild".
+          Touching "cmTC_4538d.dir\\Debug\\cmTC_4538d.tlog\\cmTC_4538d.lastbuildstate".
+        Done Building Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gg2nfn\\cmTC_4538d.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.67
+        Time Elapsed 00:00:00.58
         
       exitCode: 0
   -
@@ -1333,7 +1443,7 @@ events:
       - "CMakeLists.txt:4 (project)"
     message: |
       Running the C compiler's linker: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/link.exe" "-v"
-      Microsoft (R) Incremental Linker Version 14.50.35728.0
+      Microsoft (R) Incremental Linker Version 14.50.35729.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
   -
     kind: "try_compile-v1"
@@ -1344,8 +1454,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/CMakeScratch/TryCompile-8kww7s"
-      binary: "C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/CMakeScratch/TryCompile-8kww7s"
+      source: "C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-vphml4"
+      binary: "C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-vphml4"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -1355,39 +1465,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/CMakeScratch/TryCompile-8kww7s'
+        Change Dir: 'C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-vphml4'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_54050.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
-        MSBuild version 18.4.0+6e61e96ac for .NET Framework
-        Build started 3/27/2026 9:20:28 PM.
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e0b7d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        MSBuild version 18.5.4+cb4e32d21 for .NET Framework
+        Build started 4/25/2026 7:21:45 PM.
         
-        Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8kww7s\\cmTC_54050.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vphml4\\cmTC_e0b7d.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8kww7s\\Debug\\".
-          Creating directory "cmTC_54050.dir\\Debug\\cmTC_54050.tlog\\".
+          Creating directory "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vphml4\\Debug\\".
+          Creating directory "cmTC_e0b7d.dir\\Debug\\cmTC_e0b7d.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_54050.dir\\Debug\\cmTC_54050.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_54050.dir\\Debug\\cmTC_54050.tlog\\unsuccessfulbuild".
+          Creating "cmTC_e0b7d.dir\\Debug\\cmTC_e0b7d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_e0b7d.dir\\Debug\\cmTC_e0b7d.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_54050.dir\\Debug\\\\" /Fd"cmTC_54050.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
-          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35728 for x64
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_e0b7d.dir\\Debug\\\\" /Fd"cmTC_e0b7d.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35729 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_54050.dir\\Debug\\\\" /Fd"cmTC_54050.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_e0b7d.dir\\Debug\\\\" /Fd"cmTC_e0b7d.dir\\Debug\\vc145.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8kww7s\\Debug\\cmTC_54050.exe" /INCREMENTAL /ILK:"cmTC_54050.dir\\Debug\\cmTC_54050.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/CMakeScratch/TryCompile-8kww7s/Debug/cmTC_54050.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/ditas/source/repos/objektuzd/objektuzd/build/CMakeFiles/CMakeScratch/TryCompile-8kww7s/Debug/cmTC_54050.lib" /MACHINE:X64  /machine:x64 cmTC_54050.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_54050.vcxproj -> C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8kww7s\\Debug\\cmTC_54050.exe
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vphml4\\Debug\\cmTC_e0b7d.exe" /INCREMENTAL /ILK:"cmTC_e0b7d.dir\\Debug\\cmTC_e0b7d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-vphml4/Debug/cmTC_e0b7d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/ditas/source/repos/objektuzd/objekt1uzd/build/CMakeFiles/CMakeScratch/TryCompile-vphml4/Debug/cmTC_e0b7d.lib" /MACHINE:X64  /machine:x64 cmTC_e0b7d.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_e0b7d.vcxproj -> C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vphml4\\Debug\\cmTC_e0b7d.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_54050.dir\\Debug\\cmTC_54050.tlog\\unsuccessfulbuild".
-          Touching "cmTC_54050.dir\\Debug\\cmTC_54050.tlog\\cmTC_54050.lastbuildstate".
-        Done Building Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objektuzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8kww7s\\cmTC_54050.vcxproj" (default targets).
+          Deleting file "cmTC_e0b7d.dir\\Debug\\cmTC_e0b7d.tlog\\unsuccessfulbuild".
+          Touching "cmTC_e0b7d.dir\\Debug\\cmTC_e0b7d.tlog\\cmTC_e0b7d.lastbuildstate".
+        Done Building Project "C:\\Users\\ditas\\source\\repos\\objektuzd\\objekt1uzd\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vphml4\\cmTC_e0b7d.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.62
+        Time Elapsed 00:00:00.56
         
       exitCode: 0
   -
@@ -1416,6 +1526,6 @@ events:
       - "CMakeLists.txt:4 (project)"
     message: |
       Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/HostX64/x64/link.exe" "-v"
-      Microsoft (R) Incremental Linker Version 14.50.35728.0
+      Microsoft (R) Incremental Linker Version 14.50.35729.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
 ...
