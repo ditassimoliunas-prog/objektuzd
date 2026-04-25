@@ -59,9 +59,21 @@ Programoje taip pat atlikta spartos analizė, matuojant kiek laiko užtrunka ski
 | **10000000**  | 47.28121 s | 70.32786 s | 43.79530 s |
 
 ### Strategijų Ataskaitos Apibendrinimas
-1. **Trynimas `std::vector` struktūroje yra neefektyvus.** Antrojoje strategijoje elementų šalinimas po vieną drastiškai sulėtina veikimą atsiradus dideliam elementų perstūmimo poreikiui (ypač matoma prie lėtėjimo skaičių 1 000 000).
-2. **`std::list` ir Node rodyklės** leidžia įspūdingą našumą net ir 2 bei 3 strategijos atveju. C++ `list` struktūroje rodykles perjungiant rankiniu ar `splice` budu nereikia fiziškai stumdyti duomenų (kas ypač tinka dideliems 1 mln. failams ir taupo atmintį).
-3. **`std::vector` su `std::stable_partition`:** 3 strategijoje vektoriaus dalijimas yra pats sklandžiausias pritaikius greituosius iteratorius (`algorithm` paketas). 
+Šio projekto vystymo metu programa buvo nuosekliai tobulinama nuo bazinio funkcionalumo iki pilnai išvystyto įrankio, gebančio efektyviai apdoroti didelius studentų duomenų kiekius. Įgyvendintos pagrindinės funkcijos: duomenų nuskaitymas ir išvedimas (tiek konsolėje, tiek failuose), išimčių valdymas, testinių duomenų generavimas bei išsami spartos analizė.
+
+Galutinėje (v1.0) versijoje pagrindinis dėmesys skirtas skirtingų C++ konteinerių (std::vector, std::list, std::deque) ir duomenų skaidymo strategijų efektyvumo palyginimui. Tyrimas parodė, kad našumas stipriai priklauso ne tik nuo pasirinkto konteinerio, bet ir nuo taikomo algoritmo.
+
+Rezultatai atskleidė, kad:
+
+std::vector pasižymi geriausiu bendru našumu, kai vengiama dažnų trynimo operacijų ir naudojami efektyvūs algoritmai.
+std::list leidžia efektyviai manipuliuoti elementais be papildomo kopijavimo, tačiau dažniausiai nusileidžia dėl prastesnio atminties panaudojimo.
+std::deque veikia kaip kompromisinis variantas, tačiau ne visais atvejais lenkia kitas struktūras.
+
+Iš testuotų strategijų efektyviausia pasirodė 3 strategija, paremta standartinės algoritmų bibliotekos sprendimais (pvz., std::stable_partition), kuri užtikrina geriausią veikimo spartą ir mastelio keitimą dirbant su dideliais duomenų kiekiais. Tuo tarpu strategijos, paremtos aktyviu elementų trynimu, ypač su std::vector, ženkliai lėtina programos veikimą.
+
+Taip pat nustatyta, kad dirbant su itin dideliais duomenų kiekiais (pvz., 10 mln. įrašų), gali pasireikšti atminties paskirstymo problemos, todėl svarbu atsižvelgti į sistemos resursus ir optimizuoti atminties naudojimą.
+
+Apibendrinant, optimaliausias sprendimas šiame projekte yra std::vector naudojimas kartu su 3 strategija, leidžiantis pasiekti geriausią našumo ir efektyvumo balansą.
 
 ---
 
