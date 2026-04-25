@@ -51,12 +51,12 @@ Programoje taip pat atlikta spartos analizė, matuojant kiek laiko užtrunka ski
 
 #### 3 Strategija (Efektyviausi C++ algoritmai/dalijimas)
 | Įrašų skaičius | `std::vector` (sekundės) | `std::list` (sekundės) | `std::deque` (sekundės) |
-| ------------- | :--- | :--- | :--- |
-| **1000**      | 0.00 | 0.00 | 0.00 |
-| **10000**     | 0.00 | 0.00 | 0.00 |
-| **100000**    | 0.00 | 0.00 | 0.00 |
-| **1000000**   | 0.00 | 0.00 | 0.00 |
-| **10000000**  | 0.00 | 0.00 | 0.00 |
+| ------------- | :---       | :---       | :---       |
+| **1000**      | 0.02968 s  | 0.02713 s  | 0.02722 s  |
+| **10000**     | 0.06208 s  | 0.06446 s  | 0.05305 s  |
+| **100000**    | 0.55363 s  | 0.51351 s  | 0.35506 s  |
+| **1000000**   | 4.78121 s  | 7.34005 s  | 3.34892 s  |
+| **10000000**  | 47.28121 s | 70.32786 s | 43.79530 s |
 
 ### Strategijų Ataskaitos Apibendrinimas
 1. **Trynimas `std::vector` struktūroje yra neefektyvus.** Antrojoje strategijoje elementų šalinimas po vieną drastiškai sulėtina veikimą atsiradus dideliam elementų perstūmimo poreikiui (ypač matoma prie lėtėjimo skaičių 1 000 000).
